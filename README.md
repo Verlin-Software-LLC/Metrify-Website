@@ -37,7 +37,7 @@ woff2 files before launch if you want zero third-party requests.
 | Privacy section | Dashed box | Privacy illustration / data-flow graphic |
 | "See it in action" | Dashed 16:9 box | 30–60s demo video |
 | Screenshot gallery | 4 dashed 9:19 boxes | Chat / Progress / Workout Lab / Food detail screenshots |
-| "Request beta access" button | `mailto:support@metrify.fit` | TestFlight / Play beta / signup form link |
+| "Request beta access" button | Google Form (beta signup) | TestFlight / Play beta link once the store builds exist |
 | Store badges | Text mockups | Official App Store / Google Play badge art (once live) |
 
 ## Notes
