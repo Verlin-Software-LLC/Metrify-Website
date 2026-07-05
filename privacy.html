@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Metrify</title>
+<meta name="description" content="Metrify Privacy Policy — what stays on your device, what leaves your phone and why.">
+<link rel="icon" href="metrify_logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand:        #FF7A00;
+    --bg:           #141414;
+    --bg-raised:    #1f1f1f;
+    --bg-card:      #242424;
+    --border:       #333333;
+    --text:         #f2f2f2;
+    --text-dim:     #ababab;
+    --text-faint:   #6e6e6e;
+    --font-display: "Archivo Black", "Arial Black", "Segoe UI", sans-serif;
+    --font-body:    "Archivo", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg); color: var(--text);
+    line-height: 1.65; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1080px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between; height: 64px;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-display); font-weight: 400;
+    font-size: 1.15rem; color: var(--text);
+  }
+  .logo:hover { text-decoration: none; }
+  .logo-mark { height: 34px; width: auto; display: block; }
+  .nav-back { color: var(--text-dim); font-size: 0.95rem; }
+
+  .doc { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+  .doc h1 { font-family: var(--font-display); font-weight: 400; font-size: 2rem; line-height: 1.15; margin-bottom: 10px; }
+  .doc-meta { color: var(--text-faint); font-size: 0.9rem; margin-bottom: 36px; }
+  .doc h2 {
+    font-family: var(--font-display); font-weight: 400; font-size: 1.25rem;
+    margin: 44px 0 14px; line-height: 1.3;
+  }
+  .doc p { color: var(--text-dim); margin-bottom: 14px; font-size: 0.97rem; }
+  .doc strong { color: var(--text); }
+  .doc ul { padding-left: 24px; margin-bottom: 16px; }
+  .doc li { color: var(--text-dim); margin-bottom: 9px; font-size: 0.97rem; }
+  .doc hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+  .table-scroll { overflow-x: auto; margin-bottom: 16px; }
+  .doc table { border-collapse: collapse; width: 100%; font-size: 0.88rem; min-width: 560px; }
+  .doc th, .doc td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+  .doc th { color: var(--text); background: var(--bg-raised); font-weight: 600; }
+  .doc td { color: var(--text-dim); }
+  .fine { font-size: 0.85rem; color: var(--text-faint); font-style: italic; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; color: var(--text-faint); font-size: 0.85rem; }
+  footer a { color: var(--text-dim); margin: 0 12px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><img class="logo-mark" src="metrify_logo.svg" alt="Metrify logo">Metrify</a>
+    <a class="nav-back" href="index.html">&larr; Back to home</a>
+  </div>
+</nav>
+
+<main class="doc">
+  <h1>Metrify Privacy Policy</h1>
+  <p class="doc-meta">Effective date: July 3, 2026 &middot; Last updated: July 3, 2026</p>
+
+  <p>Metrify ("Metrify," "we," "us," or "our") is an AI-assisted fitness and nutrition tracking application. This Privacy Policy explains what information we collect, how we use it, who we share it with, and the choices you have. It applies to the Metrify mobile application and the backend services that power it (together, the "Service").</p>
+  <p>Metrify is built privacy-first: <strong>your fitness data lives on your device, not on our servers.</strong> The sections below explain exactly what stays local, what leaves your phone and why, and what happens to it when it does.</p>
+
+  <hr>
+
+  <h2>1. Summary (TL;DR)</h2>
+  <ul>
+    <li>Your food logs, exercise logs, weight history, sleep records, goals, profile details, custom foods, and the AI assistant's saved "memory" facts are stored <strong>locally on your device</strong> in an on-device database, never on our servers.</li>
+    <li>We store a minimal <strong>account record</strong> (your email, authentication identifiers, subscription tier, and daily chat-usage counts) so the Service can function.</li>
+    <li>If you buy a <strong>Premium subscription</strong>, the purchase is processed by the Apple App Store or Google Play and managed through <strong>RevenueCat</strong>; we receive your subscription status and transaction identifiers, never your full payment-card details.</li>
+    <li>If you connect <strong>Apple Health</strong> or <strong>Health Connect</strong>, Metrify reads weight, workouts, steps, and sleep from your device's health hub — read-only, with your permission — and stores them in your on-device database. This health data is never sold and never used for advertising.</li>
+    <li>When you use the <strong>AI chat assistant</strong>, your messages — and any fitness data the assistant reads from your device to answer you, and any food photos you submit — are sent to our server and relayed to our AI provider (OpenAI) to generate a response. Chat sessions are held in server memory only and expire automatically; we do not write chat transcripts to a database.</li>
+    <li>If you <strong>scan a product barcode</strong>, only the barcode number is sent to our server to look up the food. If the product isn't in our catalog yet, our server queries <strong>Open Food Facts</strong> and the <strong>USDA FoodData Central</strong> databases with the barcode number only — never your identity.</li>
+    <li>We use <strong>Sentry</strong> for crash and performance reporting (device and app diagnostics, stack traces).</li>
+    <li>We do not sell your personal information. We do not use your health and fitness data for advertising.</li>
+    <li>You can delete your account and all associated server-side data at any time from within the app (Profile &rarr; Danger Zone &rarr; Delete Account).</li>
+  </ul>
+
+  <hr>
+
+  <h2>2. Information Stored Only on Your Device</h2>
+  <p>The following data is created and stored in a local database on your device and is <strong>not</strong> uploaded to or retained by our servers (except transiently during AI chat turns, as described in Section 4):</p>
+  <ul>
+    <li>Food logs, including meals, quantities, and nutritional breakdowns</li>
+    <li>Exercise and workout logs, workout templates, and custom exercises</li>
+    <li>Weight history</li>
+    <li>Sleep records</li>
+    <li>Step counts and other health metrics imported from your device's health hub (see Section 5)</li>
+    <li>Your profile details (name, age, date of birth, gender, height, weight, units preference)</li>
+    <li>Calorie and macronutrient goals, including goal history</li>
+    <li>Custom foods you create (these are never uploaded to our food catalog)</li>
+    <li>Facts the AI assistant saves at your direction (e.g., allergies, movement limitations, goal motivations)</li>
+    <li>Cached copies of catalog foods you have searched for or scanned, so search and barcode lookups work offline</li>
+    <li>Reminder settings (reminders are delivered as local, on-device notifications — no server is involved)</li>
+    <li>App preferences (theme, units, filters)</li>
+  </ul>
+  <p>If you uninstall the app, this local data is deleted with it and we cannot recover it.</p>
+
+  <h2>3. Information We Collect on Our Servers</h2>
+  <p><strong>Account information.</strong> When you create an account we collect your email address and a password (stored as a secure hash by our authentication provider, Supabase), or your identity token if you sign in with Google or Apple. Authentication session tokens are stored on your device in platform-protected secure storage (Keychain on iOS, Keystore on Android, DPAPI on Windows).</p>
+  <p><strong>Usage and quota records.</strong> We record your subscription tier and a daily count of AI chat turns to enforce usage limits (these reset daily). We also track a lifetime turn count for analytics.</p>
+  <p><strong>Subscription and purchase data.</strong> If you purchase a Premium subscription, the transaction is handled by the Apple App Store or Google Play and managed through RevenueCat. RevenueCat associates the purchase with an identifier tied to your account so our server can keep your subscription tier current (including when a subscription renews, lapses, or is refunded outside the app). We receive your subscription status, the plan you bought, and store transaction identifiers. <strong>We never receive or store your full payment-card number</strong> — the app stores handle payment.</p>
+  <p><strong>Food catalog popularity signals.</strong> When you log a food from our shared catalog, the app sends an anonymous-in-effect "selection" signal that increments a popularity counter on that food to improve search ranking. This counter is attached to the food, not to your account.</p>
+  <p><strong>Food search and barcode lookups.</strong> When you search the shared food catalog or scan a product barcode, the search text or barcode number is sent to our server to return matching foods. These lookups are processed transiently to answer the request — we do not log your search terms or scanned barcodes, and they are not linked to your account. If a scanned barcode is not in our catalog, our server performs a one-time lookup against <strong>Open Food Facts</strong> and the <strong>USDA FoodData Central</strong> database. That external request is made by our server and contains <strong>only the barcode number</strong> — never your identity, account, or IP address. Product data returned by these sources is saved into our shared food catalog (it describes the product, not you), so future scans of that product resolve instantly for everyone.</p>
+  <p><strong>Crash and diagnostic data.</strong> We use Sentry to collect crash reports and performance traces. These may include device model, operating system version, app version, and stack traces. We use this data solely to diagnose and fix problems. If we ever enable screenshot capture at the moment of an error (which could incidentally include on-screen content), we will update this Policy first.</p>
+  <p><strong>Network metadata.</strong> Like virtually all internet services, our servers process IP addresses to deliver responses and to rate-limit certain endpoints (e.g., the pre-signup email check). We do not build profiles from this data.</p>
+
+  <h2>4. AI Chat, Photos, and Voice</h2>
+  <p><strong>Chat.</strong> Metrify's assistant works through a tool loop: your message goes to our server, which forwards it to our AI model provider (currently OpenAI). When the assistant needs your data to answer (e.g., "how was my protein this week?"), your device executes the request locally and returns the relevant results — which may include food logs, weights, exercise and sleep history, step counts, profile details, and goals — through our server to the model. This means <strong>health and fitness data transits our server and the AI provider during a chat turn.</strong></p>
+  <ul>
+    <li>Chat conversations are held in <strong>server memory only</strong>, keyed to your session, and are automatically discarded after a period of inactivity (approximately one hour) or when you reset the chat. We do not persist chat transcripts in a database. If this ever changes, we will update this Policy before doing so.</li>
+    <li>Per OpenAI's API data usage policies in effect as of this writing, data submitted via the API is not used to train OpenAI's models. We do not opt in to any training programs.</li>
+    <li>Write actions the assistant proposes (logging food, changing goals, deleting entries) execute <strong>on your device</strong> and require your in-app confirmation.</li>
+  </ul>
+  <p><strong>Photos.</strong> If you use photo-based food logging, the image you submit is downscaled on your device (to a maximum of 1,536 pixels on its longest side), sent to our server, and relayed to the AI vision model to identify the food. Images are processed transiently as part of the chat turn and are not stored by us.</p>
+  <p><strong>Voice.</strong> Speech-to-text uses your device platform's native speech recognition (with your microphone permission). Audio is processed by your device and/or its platform speech service (Apple or Google, per your device settings) — Metrify's servers never receive your audio; we receive only the resulting text if you send it as a chat message.</p>
+  <p><strong>Knowledge retrieval.</strong> To ground answers, the server may search a curated nutrition and exercise reference library. This search runs server-side over reference content, not over your personal data.</p>
+
+  <h2>5. Health and Fitness Platform Integration</h2>
+  <p>Metrify can connect to your device's health hub — <strong>Apple Health</strong> on iOS and <strong>Health Connect</strong> on Android — to bring in readings you have recorded elsewhere (for example, from a smart scale, a wearable, or another fitness app) automatically. This integration is optional and stays off until you turn it on from the in-app Connections tab.</p>
+  <ul>
+    <li><strong>Permission.</strong> Connecting triggers the operating system's own permission sheet. Metrify cannot read any health data until you grant access there. You can review or revoke this access at any time in your device settings (on iOS: Settings &rarr; Health &rarr; Data Access &amp; Devices &rarr; Metrify; on Android: your Health Connect settings).</li>
+    <li><strong>What we read.</strong> With your permission, Metrify reads <strong>body weight, workouts, step counts, and sleep</strong> from the health hub to keep your logs current.</li>
+    <li><strong>Read-only.</strong> Metrify only reads from the health hub. It does <strong>not</strong> write any data back to Apple Health or Health Connect.</li>
+    <li><strong>Stays on your device.</strong> Data imported from the health hub is stored in your on-device database alongside your other logs (Section 2). It is not uploaded to or retained by our servers, except transiently if the assistant reads it to answer you during a chat turn (Section 4).</li>
+    <li><strong>Use limits.</strong> Consistent with Apple and Google platform policies, data obtained from Apple Health or Health Connect is used only to provide Metrify's features — such as showing and logging your weight, workouts, steps, and sleep, and estimating calories burned. It is <strong>never</strong> used for advertising or marketing, is <strong>never</strong> sold, and is <strong>never</strong> shared with third parties for their own purposes.</li>
+  </ul>
+  <p>Synced weigh-ins, workouts, and sleep first appear as pending items you can review and then log or dismiss; you may also enable auto-logging for each type. Step totals are shown as an activity metric. Disconnecting in your device settings stops any further reads.</p>
+
+  <h2>6. How We Use Information</h2>
+  <p>We use the information described above to:</p>
+  <ul>
+    <li>Provide, maintain, and improve the Service</li>
+    <li>Authenticate you and secure your account</li>
+    <li>Generate AI assistant responses</li>
+    <li>Import and display health data from Apple Health or Health Connect when you connect them</li>
+    <li>Enforce usage quotas and tier entitlements</li>
+    <li>Rank food search results</li>
+    <li>Diagnose crashes, errors, and performance problems</li>
+    <li>Comply with legal obligations</li>
+  </ul>
+  <p>We do <strong>not</strong>:</p>
+  <ul>
+    <li>Sell your personal information</li>
+    <li>Use your health and fitness data for advertising or marketing</li>
+    <li>Share your data with third parties except the service providers listed in Section 7</li>
+  </ul>
+
+  <h2>7. Service Providers (Subprocessors)</h2>
+  <p>We share data with the following providers, only as needed to operate the Service:</p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Provider</th><th>Purpose</th><th>Data involved</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Supabase</td><td>Authentication, account database, food catalog, knowledge base hosting</td><td>Email, password hash, OAuth identities, tier/usage records</td></tr>
+        <tr><td>OpenAI</td><td>AI chat and image understanding</td><td>Chat messages, tool results (may include fitness data), submitted food photos</td></tr>
+        <tr><td>RevenueCat</td><td>Subscription management and purchase validation</td><td>Account identifier, subscription status, plan, store transaction identifiers (no card details)</td></tr>
+        <tr><td>Sentry</td><td>Crash and performance reporting</td><td>Device/app diagnostics, stack traces</td></tr>
+        <tr><td>Google</td><td>Sign-in with Google (optional); platform speech recognition</td><td>OAuth identity; on-device audio per your device settings</td></tr>
+        <tr><td>Apple</td><td>Sign in with Apple (optional); platform speech recognition</td><td>OAuth identity; on-device audio per your device settings</td></tr>
+        <tr><td>Open Food Facts</td><td>Barcode lookup for products not yet in our catalog</td><td>Barcode number only, sent from our server (no user identity)</td></tr>
+        <tr><td>USDA FoodData Central</td><td>Barcode lookup for products not yet in our catalog</td><td>Barcode number only, sent from our server (no user identity)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Each provider processes data under its own terms and our agreements with it. Apple Health (on iOS) and Health Connect (on Android) act as on-device sources you can choose to import from; we read from them locally and do not transmit your data to them (see Section 5). We may update this list as the Service evolves and will revise this Policy accordingly.</p>
+
+  <h2>8. Data Retention and Deletion</h2>
+  <ul>
+    <li><strong>Local data:</strong> retained on your device until you delete it, delete your account, or uninstall the app.</li>
+    <li><strong>Account and usage records:</strong> retained while your account is active.</li>
+    <li><strong>Chat sessions:</strong> held in server memory only and expire automatically (approximately one hour of inactivity) or upon chat reset.</li>
+    <li><strong>Crash reports:</strong> retained per Sentry's retention settings, then deleted.</li>
+  </ul>
+  <p><strong>Account deletion</strong> is available in-app (Profile &rarr; Danger Zone &rarr; Delete Account). Deletion removes your server-side records (profile, usage, device records) and your authentication account, and then wipes the app's local data on your device. This action is permanent and cannot be undone.</p>
+
+  <h2>9. Security</h2>
+  <p>We use industry-standard measures to protect your data, including TLS encryption in transit, signed JSON Web Tokens for authentication, platform secure storage for credentials on device, row-level security on shared database tables, and per-IP rate limiting on unauthenticated endpoints. No system is perfectly secure, and we cannot guarantee absolute security.</p>
+
+  <h2>10. Planned Features That Will Affect This Policy</h2>
+  <p>Metrify is under active development. The following planned features will change how data is handled. <strong>We will update this Policy and, where required, ask for your consent before any of these take effect:</strong></p>
+  <ul>
+    <li><strong>Rewarded video ads.</strong> A planned opt-in feature lets free-tier users watch an ad to earn additional chat turns. An ad network would receive standard advertising identifiers for ad delivery; <strong>health and fitness data will not be shared with ad networks.</strong></li>
+  </ul>
+
+  <h2>11. Your Rights and Choices</h2>
+  <p>Depending on where you live (e.g., the EU/EEA under GDPR, or California under CCPA/CPRA), you may have rights to access, correct, delete, export, or restrict the processing of your personal information, and the right not to be discriminated against for exercising those rights.</p>
+  <p>Because Metrify is local-first, you can directly view, edit, and delete nearly all of your data in the app itself. For server-side data, you can delete everything via in-app account deletion, or contact us (Section 14) to exercise any right. We do not sell or share personal information for cross-context behavioral advertising as defined by the CCPA/CPRA.</p>
+  <p>You may also control app permissions (camera, microphone, health-data access, and notifications) at any time in your device settings.</p>
+
+  <h2>12. Children's Privacy</h2>
+  <p>The Service is not directed to children under 13 (or the higher minimum age required in your jurisdiction, such as 16 in parts of the EU). We do not knowingly collect personal information from children. If you believe a child has provided us personal information, contact us and we will delete it.</p>
+
+  <h2>13. Changes to This Policy</h2>
+  <p>We may update this Policy as the Service evolves — including for the planned features in Section 10. We will post the updated Policy with a new effective date and, for material changes, provide notice in the app. Continued use of the Service after changes take effect constitutes acceptance of the revised Policy.</p>
+
+  <h2>14. Contact</h2>
+  <p>Questions, requests, or concerns about this Policy or your data:</p>
+  <p><strong>Email:</strong> <a href="mailto:support@metrify.fit">support@metrify.fit</a></p>
+
+  <hr>
+
+  <p class="fine">Food catalog data includes content derived from the U.S. Department of Agriculture's FoodData Central (public domain) and from <strong>Open Food Facts</strong> (<a href="https://world.openfoodfacts.org">https://world.openfoodfacts.org</a>), &copy; Open Food Facts contributors, used under the Open Database License (ODbL) v1.0 (<a href="https://opendatacommons.org/licenses/odbl/1-0/">https://opendatacommons.org/licenses/odbl/1-0/</a>). Foods sourced from Open Food Facts are labeled as such in the app.</p>
+</main>
+
+<footer>
+  &copy; 2026 Metrify &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a> &middot; <a href="mailto:support@metrify.fit">Contact</a>
+</footer>
+
+</body>
+</html>
