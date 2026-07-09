@@ -125,8 +125,11 @@
     padding: 14px 12px; box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px #000;
   }
   .phone-screen {
-    background: var(--bg-raised); border-radius: 30px; overflow: hidden;
-    display: flex; flex-direction: column; height: 560px;
+    background: #000; border-radius: 30px; overflow: hidden; display: block;
+  }
+  .phone-video {
+    width: 100%; height: auto; display: block;
+    aspect-ratio: 1080 / 2338; object-fit: cover;
   }
   .phone-topbar {
     padding: 14px 16px 10px; border-bottom: 1px solid var(--border);
@@ -237,10 +240,22 @@
     color: var(--text-faint); font-size: 0.85rem; padding: 16px;
   }
   .placeholder .ph-icon { font-size: 2rem; display: block; margin-bottom: 8px; }
-  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-  @media (max-width: 860px) { .shots { grid-template-columns: repeat(2, 1fr); } }
-  .shots .placeholder { aspect-ratio: 9 / 19; }
-  .video-ph { aspect-ratio: 16 / 9; max-width: 760px; margin: 0 auto; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 900px; margin: 0 auto; }
+  @media (max-width: 780px) { .shots { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 460px) { .shots { grid-template-columns: 1fr; max-width: 320px; } }
+  .shot { margin: 0; }
+  .shot img {
+    width: 100%; display: block; border-radius: 24px;
+    border: 1px solid var(--border); background: #000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+  .shot figcaption { text-align: center; margin-top: 14px; color: var(--text-dim); font-size: 0.92rem; font-weight: 600; }
+  .privacy-shot { display: flex; justify-content: center; }
+  .privacy-shot img {
+    width: 100%; max-width: 300px; display: block; border-radius: 26px;
+    border: 1px solid var(--border); background: #000;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+  }
 
   /* ============ Pricing ============ */
   .plans {
@@ -296,7 +311,7 @@
 
 <header class="hero wrap">
   <div>
-    <span class="badge">Now in beta &middot; Full release October 2026</span>
+    <span class="badge">Now in beta &middot; Full release September 2026</span>
     <h1>The fitness tracker you can <span class="accent">just talk to.</span></h1>
     <p class="lede">
       Log meals, workouts, and weight by chatting — like texting a friend who
@@ -314,27 +329,14 @@
   </div>
 
   <div>
-    <!-- PLACEHOLDER: replace this CSS mockup with a real app screenshot or screen recording -->
     <div class="phone">
       <div class="phone-screen">
-        <div class="phone-topbar">Metrify</div>
-        <div class="chat">
-          <div class="bubble user">had a chipotle chicken bowl with white rice and guac</div>
-          <div class="food-card">
-            <div class="fc-head"><b>Chicken burrito bowl</b><span class="kcal">905 kcal</span></div>
-            <div class="fc-row">
-              <div class="donut"></div>
-              <div class="macros"><b>51g</b> protein &middot; <b>78g</b> carbs &middot; <b>42g</b> fat</div>
-            </div>
-            <div class="fc-actions"><span class="chip primary">Logged ✓</span><span class="chip">Edit</span><span class="chip">Undo</span></div>
-          </div>
-          <div class="bubble user">how am i doing today?</div>
-          <div class="bubble bot">You've got <b>612 kcal</b> left and you're at <b>96g of 150g</b> protein — a greek yogurt tonight would just about close the gap. 💪</div>
-        </div>
-        <div class="phone-input"><span>Message Metrify…</span><span>🎤</span></div>
+        <video class="phone-video" autoplay muted loop playsinline preload="metadata"
+               poster="resources/screen-log-dashboard.jpg">
+          <source src="resources/demo_vid.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
-    <p class="phone-note">Mockup — swap in a real screenshot or recording</p>
   </div>
 </header>
 
@@ -419,8 +421,8 @@
         <li>Delete the app, delete the data <span>— it was never anywhere else</span></li>
       </ul>
     </div>
-    <div class="placeholder" style="aspect-ratio: 4 / 3;">
-      <div><span class="ph-icon">🔒</span>Placeholder — privacy illustration<br>(e.g. phone with a padlock, data-flow diagram)</div>
+    <div class="privacy-shot">
+      <img src="resources/screen-log-dashboard.jpg" alt="Metrify Log screen showing a day of meals, calories, and macros — all stored on the device" loading="lazy">
     </div>
   </div>
 </section>
@@ -429,16 +431,33 @@
   <div class="wrap">
     <div class="section-head">
       <h2>See it in action</h2>
-      <p>A quick look at logging a meal, checking progress, and building a workout.</p>
-    </div>
-    <div class="placeholder video-ph" style="margin-bottom: 40px;">
-      <div><span class="ph-icon">🎬</span>Placeholder — demo video<br>(30–60s screen recording of a chat log flow)</div>
+      <p>Real screens from the app — logging, progress, and health sync.</p>
     </div>
     <div class="shots">
-      <div class="placeholder"><div><span class="ph-icon">💬</span>Screenshot<br>Chat</div></div>
-      <div class="placeholder"><div><span class="ph-icon">📈</span>Screenshot<br>Progress</div></div>
-      <div class="placeholder"><div><span class="ph-icon">🏋️</span>Screenshot<br>Workout Lab</div></div>
-      <div class="placeholder"><div><span class="ph-icon">🍎</span>Screenshot<br>Food detail</div></div>
+      <figure class="shot">
+        <img src="resources/screen-log-dashboard.jpg" alt="Metrify Log screen: calories eaten, a macros donut, and logged meals" loading="lazy">
+        <figcaption>Your day at a glance</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="resources/screen-progress-overview.jpg" alt="Progress overview: net calories, weight change, and an adherence heatmap" loading="lazy">
+        <figcaption>Adherence &amp; streaks</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="resources/screen-progress-weight.jpg" alt="Weight trend chart with 7-day average and a projected weight" loading="lazy">
+        <figcaption>Weight trend &amp; projection</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="resources/screen-progress-food.jpg" alt="Daily net-calorie bar chart with macro averages" loading="lazy">
+        <figcaption>Calories, day by day</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="resources/screen-progress-training.jpg" alt="Exercise calories burned per day across the range" loading="lazy">
+        <figcaption>Every workout counted</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="resources/screen-connections-health.jpg" alt="Connections screen syncing weight, workouts, and steps from Health Connect" loading="lazy">
+        <figcaption>Sync your watch &amp; scale</figcaption>
+      </figure>
     </div>
   </div>
 </section>
