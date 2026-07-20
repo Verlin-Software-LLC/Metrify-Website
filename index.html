@@ -84,7 +84,7 @@
     padding: 88px 0 72px;
     display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
   }
-  @media (max-width: 860px) { .hero { grid-template-columns: 1fr; padding-top: 56px; } }
+  @media (max-width: 860px) { .hero { grid-template-columns: 1fr; padding-top: 56px; gap: 36px; } }
 
   .badge {
     display: inline-block; padding: 6px 14px; border-radius: 999px;
@@ -279,6 +279,7 @@
   .plan ul { list-style: none; margin-bottom: 24px; }
   .plan li { padding-left: 28px; position: relative; margin-bottom: 10px; font-size: 0.93rem; color: var(--text-dim); }
   .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--brand); font-weight: 800; }
+  .plan li .fine { display: block; font-size: 0.76rem; color: var(--text-faint); margin-top: 2px; }
   .plan .btn { width: 100%; text-align: center; }
 
   /* ============ CTA band ============ */
@@ -293,6 +294,28 @@
   .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
   .footer-links { display: flex; gap: 24px; }
   .footer-links a { color: var(--text-dim); }
+
+  /* ============ Mobile spacing pass ============ */
+  /* Phones kept the full desktop vertical rhythm, which left oversized gaps
+     between sections and over-padded cards. Tighten the vertical scale and
+     interior padding while keeping the 24px side gutters. */
+  @media (max-width: 600px) {
+    section { padding: 48px 0; }
+    .hero { padding: 36px 0 44px; gap: 30px; }
+    .hero p.lede { margin-bottom: 26px; }
+    .hero-ctas { margin-bottom: 22px; }
+    .section-head { margin-bottom: 30px; }
+    .feature-grid { gap: 14px; }
+    .feature { padding: 22px; }
+    .steps { gap: 26px; }
+    .privacy-band { gap: 28px; }
+    .shots { gap: 16px; }
+    .plans { gap: 16px; }
+    .plan { padding: 26px 22px; }
+    .cta-band p { margin-bottom: 24px; }
+    footer { padding: 32px 0; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+  }
 </style>
 </head>
 <body>
@@ -476,6 +499,7 @@
         <ul>
           <li>Unlimited manual food, weight &amp; workout logging</li>
           <li>3 AI chat messages per day</li>
+          <li>Full Workout Lab</li>
           <li>Full progress charts &amp; history</li>
           <li>Apple Health &amp; Health Connect sync</li>
           <li>100% on-device data — same as Premium</li>
@@ -489,10 +513,8 @@
         <p class="sub">or $59.99/yr (about $5/mo — save ~28%)</p>
         <ul>
           <li>Everything in Free</li>
-          <li>75 AI chat messages per day</li>
+          <li>Near-unlimited AI chat <span class="fine">Fair use: capped at 75 messages per day</span></li>
           <li>Photo meal logging</li>
-          <li>Full Workout Lab</li>
-          <li>Priority access to new features</li>
         </ul>
         <a href="#beta" class="btn btn-primary">Go Premium</a>
       </div>
