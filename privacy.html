@@ -83,7 +83,7 @@
 
 <main class="doc">
   <h1>Metrify Privacy Policy</h1>
-  <p class="doc-meta">Effective date: July 3, 2026 &middot; Last updated: July 3, 2026</p>
+  <p class="doc-meta">Effective date: July 3, 2026 &middot; Last updated: July 22, 2026</p>
 
   <p>Metrify ("Metrify," "we," "us," or "our") is an AI-assisted fitness and nutrition tracking application. This Privacy Policy explains what information we collect, how we use it, who we share it with, and the choices you have. It applies to the Metrify mobile application and the backend services that power it (together, the "Service").</p>
   <p>Metrify is built privacy-first: <strong>your fitness data lives on your device, not on our servers.</strong> The sections below explain exactly what stays local, what leaves your phone and why, and what happens to it when it does.</p>
@@ -100,6 +100,7 @@
     <li>If you <strong>scan a product barcode</strong>, only the barcode number is sent to our server to look up the food. If the product isn't in our catalog yet, our server queries <strong>Open Food Facts</strong> and the <strong>USDA FoodData Central</strong> databases with the barcode number only — never your identity.</li>
     <li>We use <strong>Sentry</strong> for crash and performance reporting (device and app diagnostics, stack traces).</li>
     <li>We do not sell your personal information. We do not use your health and fitness data for advertising.</li>
+    <li>You can <strong>export</strong> a complete copy of your on-device data as a backup file at any time, <strong>import</strong> a backup on this or another device, and <strong>wipe</strong> all local data &mdash; free for every user. Backup files are created entirely on your device and are never sent to us (see Section 2).</li>
     <li>You can delete your account and all associated server-side data at any time from within the app (Profile &rarr; Danger Zone &rarr; Delete Account).</li>
   </ul>
 
@@ -122,6 +123,7 @@
     <li>App preferences (theme, units, filters)</li>
   </ul>
   <p>If you uninstall the app, this local data is deleted with it and we cannot recover it.</p>
+  <p><strong>Data export, import, and wipe.</strong> You can save a copy of this on-device data at any time (Profile &rarr; Advanced &rarr; Export data) as a single backup file written to a location you choose, and restore a backup on this or another device (Profile &rarr; Advanced &rarr; Import data). Backups are created entirely on your device: the file is never uploaded to us, and importing one sends nothing to our servers. A backup contains your fitness data in readable form (chat history and chat photos are not included), so treat the file with the same care as the data itself and store it somewhere you trust. Restoring a backup replaces the data currently on the device. You can also erase all Metrify data on your device without deleting your account (Profile &rarr; Advanced &rarr; Wipe all data). These features are available to every user, free.</p>
 
   <h2>3. Information We Collect on Our Servers</h2>
   <p><strong>Account information.</strong> When you create an account we collect your email address and a password (stored as a secure hash by our authentication provider, Supabase), or your identity token if you sign in with Google or Apple. Authentication session tokens are stored on your device in platform-protected secure storage (Keychain on iOS, Keystore on Android, DPAPI on Windows).</p>
@@ -196,7 +198,8 @@
 
   <h2>8. Data Retention and Deletion</h2>
   <ul>
-    <li><strong>Local data:</strong> retained on your device until you delete it, delete your account, or uninstall the app.</li>
+    <li><strong>Local data:</strong> retained on your device until you delete it (including via Profile &rarr; Advanced &rarr; Wipe all data), delete your account, or uninstall the app.</li>
+    <li><strong>Exported backup files:</strong> entirely under your control wherever you chose to save them. Wiping your data, deleting your account, or uninstalling the app does <strong>not</strong> delete backup files you previously exported &mdash; delete those yourself if you no longer want them.</li>
     <li><strong>Account and usage records:</strong> retained while your account is active.</li>
     <li><strong>Chat sessions:</strong> held in server memory only and expire automatically (approximately one hour of inactivity) or upon chat reset.</li>
     <li><strong>Crash reports:</strong> retained per Sentry's retention settings, then deleted.</li>
@@ -214,7 +217,7 @@
 
   <h2>11. Your Rights and Choices</h2>
   <p>Depending on where you live (e.g., the EU/EEA under GDPR, or California under CCPA/CPRA), you may have rights to access, correct, delete, export, or restrict the processing of your personal information, and the right not to be discriminated against for exercising those rights.</p>
-  <p>Because Metrify is local-first, you can directly view, edit, and delete nearly all of your data in the app itself. For server-side data, you can delete everything via in-app account deletion, or contact us (Section 14) to exercise any right. We do not sell or share personal information for cross-context behavioral advertising as defined by the CCPA/CPRA.</p>
+  <p>Because Metrify is local-first, you can directly view, edit, and delete nearly all of your data in the app itself, and you can export a complete, portable copy of it at any time (Profile &rarr; Advanced &rarr; Export data &mdash; see Section 2). For server-side data, you can delete everything via in-app account deletion, or contact us (Section 14) to exercise any right. We do not sell or share personal information for cross-context behavioral advertising as defined by the CCPA/CPRA.</p>
   <p>You may also control app permissions (camera, microphone, health-data access, and notifications) at any time in your device settings.</p>
 
   <h2>12. Children's Privacy</h2>
