@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your workout should count once</title>
+<meta name="description" content="An explanation of the double-counting trap in fitness apps and why Metrify uses a fixed non-exercise baseline for your daily calorie goal.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Metrify">
+<meta property="og:title" content="Your workout should count once">
+<meta property="og:description" content="An explanation of the double-counting trap in fitness apps and why Metrify uses a fixed non-exercise baseline for your daily calorie goal.">
+<meta property="og:url" content="https://metrify.fit/articles/your-workout-should-count-once.html">
+<meta property="og:image" content="https://metrify.fit/resources/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Metrify: the fitness tracker you can just talk to">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your workout should count once">
+<meta name="twitter:description" content="An explanation of the double-counting trap in fitness apps and why Metrify uses a fixed non-exercise baseline for your daily calorie goal.">
+<meta name="twitter:image" content="https://metrify.fit/resources/og-card.png">
+<link rel="canonical" href="https://metrify.fit/articles/your-workout-should-count-once.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/metrify_logo.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="article.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Your workout should count once",
+  "description": "An explanation of the double-counting trap in fitness apps and why Metrify uses a fixed non-exercise baseline for your daily calorie goal.",
+  "datePublished": "2026-07-31",
+  "dateModified": "2026-07-31",
+  "author": { "@type": "Organization", "name": "Metrify" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Metrify",
+    "logo": { "@type": "ImageObject", "url": "https://metrify.fit/metrify_logo.svg" }
+  },
+  "mainEntityOfPage": "https://metrify.fit/articles/your-workout-should-count-once.html"
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index.html"><img class="logo-mark" src="../metrify_logo.svg" alt="Metrify logo">Metrify</a>
+    <div class="nav-links">
+      <a class="anchor-link" href="../index.html#features">Features</a>
+      <a class="anchor-link" href="../index.html#privacy">Privacy</a>
+      <a class="anchor-link" href="../index.html#pricing">Pricing</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="index.html" class="current">Articles</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <header class="article-head">
+    <span class="eyebrow"><a href="index.html">The math</a></span>
+    <h1>Your workout should count once</h1>
+    <p class="standfirst">Why a moving daily calorie goal makes tracking harder than it needs to be.</p>
+    <p class="byline">Published 31 July 2026</p>
+  </header>
+
+  <article>
+    <h2>The double-counting trap</h2>
+    <p>When you set up a standard calorie tracking app, you are usually asked to select an activity level. If you select an option like "active" because you train at the gym four days a week, the app calculates a daily calorie allowance that already includes the energy you burn during those sessions.</p>
+    <p>The trap occurs when you then log those gym sessions in the app. The same calories get counted a second time. The result is an inflated daily allowance and a caloric deficit that is smaller than it appears.</p>
+    <p>The reason this is worth an article is that it fails silently. Nothing warns you. The app shows you hitting your target every day, the numbers look disciplined, and the scale does not move. Most people conclude their metabolism is broken. Usually the arithmetic just ran twice.</p>
+
+    <h2>The net calorie model</h2>
+    <p>Many popular applications use a net calorie model to handle exercise. MyFitnessPal's support documentation explains this clearly:</p>
+    <blockquote>
+      <p>When you log exercise, your daily calorie goal will increase for the day, to stabilize your weight loss or weight gain at the rate you initially specified.</p>
+    </blockquote>
+    <p>They suggest you think of net calories like a daily budget: you spend them by eating, and you earn more calories to eat by exercising. Welling handles exercise in a similar way. Their FAQ notes that burned calories are added to your daily calorie budget by default.</p>
+    <p>In both of these applications, this behavior is a deliberate, documented feature, and both let you disable it in settings. It is not a bug, and it works correctly for a user who selected a sedentary activity level at setup and logs every workout accurately. The problem is that the two settings interact, and nothing in the interface connects them.</p>
+    <p>There is a second issue even when the activity level is set correctly. Calorie burn estimates for exercise are among the least reliable numbers in fitness tracking. Treating an estimate that could be off by several hundred calories as spendable budget converts measurement error directly into overeating.</p>
+
+    <h2>The Metrify design</h2>
+    <p>Metrify takes a different architectural approach to avoid double-counting entirely. The baseline calculation uses the Mifflin-St Jeor BMR formula multiplied by 1.2, which is the standard sedentary multiplier.</p>
+    <p>That baseline is deliberately non-exercise. It covers the energy required by your body at rest plus ordinary daily living, and nothing else. There is no activity level questionnaire during setup that could quietly absorb your training volume, because there is no activity level question at all.</p>
+    <p>Logged exercise is then counted exactly once, on top, as that day's burn. Your daily calorie goal does not move when you train. The daily net is a single subtraction: calories in minus calories burned.</p>
+
+    <h2>The benefit of a fixed goal</h2>
+    <p>A fixed goal is easier to reason about than a moving one. You always know exactly what number you are aiming at when you plan your meals, and that number is the same on a rest day as on a training day. You do not have to check what the app thinks you have earned before deciding what to eat.</p>
+    <p>A hard training day shows up exactly as it should: as a larger deficit on the burn side of the ledger, rather than as permission to eat more food. If you decide to eat more after a heavy session, that is a decision you make deliberately, not one the interface makes for you by quietly raising a number.</p>
+    <p>Because your maintenance needs decrease as you lose weight, Metrify's weight projection decelerates toward a plateau as your body mass changes. It adjusts to your new reality rather than assuming you will lose weight at the same rate forever.</p>
+
+    <h2>To be fair about it</h2>
+    <p>Eating some calories back after a hard workout is a legitimate strategy. Athletes in heavy training blocks do it deliberately to fuel recovery, and anyone doing serious endurance volume has a real reason to. If you know that is what you are doing, you can do it in any app, including this one.</p>
+    <p>The argument here is about defaults and transparency, not about whether exercise calories should ever be eaten. It is that a beginner should not have their deficit silently halved by a setup screen and a logging habit that nobody told them interact. Metrify forces the math to be explicit, which means the choice stays yours.</p>
+
+    <div class="summary">
+      <h2>Summary</h2>
+      <p>Metrify calculates a user's daily baseline calorie requirement using the Mifflin-St Jeor BMR formula multiplied by a 1.2 sedentary factor. This baseline strictly represents resting and daily living energy. The daily calorie goal remains fixed and does not increase when workouts are logged. Exercise is recorded separately as burned calories, ensuring that training volume is calculated exactly once.</p>
+    </div>
+
+    <div class="more-reading">
+      <h2>Related reading</h2>
+      <ul>
+        <li><a href="metrify-vs-myfitnesspal.html">Metrify vs MyFitnessPal: an honest comparison</a></li>
+        <li><a href="one-app-whole-picture.html">One application for the whole picture</a></li>
+        <li><a href="the-chatbot-is-the-app.html">The assistant is the application, not just a chat window</a></li>
+      </ul>
+    </div>
+
+    <div class="article-cta">
+      <h2>Try Metrify</h2>
+      <p>In beta now, with full release planned for August 2026.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+    </div>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>&copy; 2026 Verlin Software LLC. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="../faq.html">FAQ</a>
+      <a href="index.html">Articles</a>
+      <a href="../your-data.html">Your Data</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Service</a>
+      <a href="../delete-account.html">Delete Account</a>
+      <a href="mailto:support@metrify.fit">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Your Metrify Account — Metrify</title>
+<meta property="og:title" content="Delete Your Metrify Account — Metrify">
+<meta property="og:site_name" content="Metrify">
+<meta property="og:url" content="https://metrify.fit/delete-account.html">
+<meta property="og:image" content="https://metrify.fit/resources/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="How to request deletion of your Metrify account and associated data, what gets deleted, and what is kept.">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/metrify_logo.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand:        #FF7A00;
+    --bg:           #141414;
+    --bg-raised:    #1f1f1f;
+    --bg-card:      #242424;
+    --border:       #333333;
+    --text:         #f2f2f2;
+    --text-dim:     #ababab;
+    --text-faint:   #6e6e6e;
+    --font-display: "Archivo Black", "Arial Black", "Segoe UI", sans-serif;
+    --font-body:    "Archivo", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg); color: var(--text);
+    line-height: 1.65; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1080px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between; height: 64px;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-display); font-weight: 400;
+    font-size: 1.15rem; color: var(--text);
+  }
+  .logo:hover { text-decoration: none; }
+  .logo-mark { height: 34px; width: auto; display: block; }
+  .nav-back { color: var(--text-dim); font-size: 0.95rem; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { color: var(--text-dim); font-size: 0.95rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--text); }
+  @media (max-width: 560px) {
+    .nav-links { gap: 14px; }
+    .nav-links a { font-size: 0.85rem; }
+    .nav-back { display: none; }
+  }
+
+  .doc { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+  .doc h1 { font-family: var(--font-display); font-weight: 400; font-size: 2rem; line-height: 1.15; margin-bottom: 10px; }
+  .doc-meta { color: var(--text-faint); font-size: 0.9rem; margin-bottom: 36px; }
+  .doc h2 {
+    font-family: var(--font-display); font-weight: 400; font-size: 1.25rem;
+    margin: 44px 0 14px; line-height: 1.3;
+  }
+  .doc h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 24px 0 10px; }
+  .doc p { color: var(--text-dim); margin-bottom: 14px; font-size: 0.97rem; }
+  .doc strong { color: var(--text); }
+  .doc ul, .doc ol { padding-left: 24px; margin-bottom: 16px; }
+  .doc li { color: var(--text-dim); margin-bottom: 9px; font-size: 0.97rem; }
+  .doc hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+  .table-scroll { overflow-x: auto; margin-bottom: 16px; }
+  .doc table { border-collapse: collapse; width: 100%; font-size: 0.88rem; min-width: 560px; }
+  .doc th, .doc td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+  .doc th { color: var(--text); background: var(--bg-raised); font-weight: 600; }
+  .doc td { color: var(--text-dim); }
+  .fine { font-size: 0.85rem; color: var(--text-faint); font-style: italic; }
+
+  .steps-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-left: 3px solid var(--brand);
+    border-radius: 8px; padding: 24px 28px 20px; margin: 24px 0 8px;
+  }
+  .steps-card h2 { margin-top: 0; }
+  .steps-card ol { padding-left: 22px; margin-bottom: 4px; }
+  .steps-card li { margin-bottom: 12px; }
+  .steps-card li strong { color: var(--text); }
+
+  .callout {
+    background: var(--bg-raised); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px 20px; margin: 20px 0;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; color: var(--text-faint); font-size: 0.85rem; }
+  footer a { color: var(--text-dim); margin: 0 12px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><img class="logo-mark" src="metrify_logo.svg" alt="Metrify logo">Metrify</a>
+    <div class="nav-links">
+      <a href="faq.html">FAQ</a>
+      <a href="articles/index.html">Articles</a>
+      <a class="nav-back" href="index.html">&larr; Back to home</a>
+    </div>
+  </div>
+</nav>
+
+<main class="doc">
+  <h1>Delete Your Metrify Account</h1>
+  <p class="doc-meta">Applies to the <strong>Metrify</strong> mobile app, published by <strong>Verlin Software LLC</strong> &middot; Last updated: July 27, 2026</p>
+
+  <p>This page explains how to request deletion of your <strong>Metrify</strong> account and the data associated with it, exactly what is deleted, and what is kept. Account deletion is permanent and cannot be undone.</p>
+
+  <div class="steps-card">
+    <h2>How to request account deletion</h2>
+
+    <h3>Option 1 — Delete from inside the app (immediate)</h3>
+    <ol>
+      <li>Open the <strong>Metrify</strong> app and make sure you are signed in.</li>
+      <li>Tap the <strong>Profile</strong> tab.</li>
+      <li>Scroll to the bottom, to the <strong>Danger Zone</strong> section.</li>
+      <li>Tap <strong>Delete account</strong>.</li>
+      <li>Read the warning and tap <strong>Continue</strong>.</li>
+      <li>Type <strong>DELETE</strong> (in capital letters) into the confirmation box, then tap <strong>Delete account</strong>.</li>
+    </ol>
+    <p>Your account and server-side data are erased immediately, all Metrify data on your device is wiped, and you are returned to the login screen.</p>
+
+    <h3>Option 2 — Request deletion by email</h3>
+    <p>If you have already uninstalled the app, cannot sign in, or would rather not use the in-app option, email us:</p>
+    <ol>
+      <li>Send an email to <a href="mailto:support@metrify.fit?subject=Account%20deletion%20request"><strong>support@metrify.fit</strong></a> <strong>from the email address associated with your Metrify account</strong>.</li>
+      <li>Use the subject line <strong>&ldquo;Account deletion request&rdquo;</strong>.</li>
+      <li>We will verify that the request comes from the account holder and delete the account.</li>
+    </ol>
+    <p>We action verified requests within <strong>30 days</strong>, and normally much sooner. We will email you to confirm once the deletion is complete.</p>
+  </div>
+
+  <hr>
+
+  <h2>What is deleted</h2>
+
+  <h3>Deleted from our servers, permanently</h3>
+  <ul>
+    <li><strong>Your account record</strong> &mdash; email address, password hash, and any Google or Apple sign-in identities linked to the account</li>
+    <li><strong>Your profile record</strong> &mdash; subscription tier and lifetime chat-turn count</li>
+    <li><strong>Usage records</strong> &mdash; daily AI chat turn counters used to enforce quotas</li>
+    <li><strong>AI token usage records</strong> &mdash; per-day model token counts tied to your account</li>
+    <li><strong>Device records</strong> &mdash; any device rows associated with your account</li>
+    <li><strong>Active chat session</strong> &mdash; any in-progress conversation held in server memory</li>
+  </ul>
+
+  <h3>Deleted from your device</h3>
+  <p>Because Metrify is local-first, most of your data never leaves your phone. Deleting your account wipes all of it from the device:</p>
+  <ul>
+    <li>Food logs, meals, quantities, and nutritional breakdowns</li>
+    <li>Exercise and workout logs, workout templates, and custom exercises</li>
+    <li>Weight history, sleep records, and step counts (including anything imported from Apple Health or Health Connect)</li>
+    <li>Your profile details &mdash; name, age, date of birth, gender, height, weight, units</li>
+    <li>Calorie and macronutrient goals, including goal history</li>
+    <li>Custom foods you created</li>
+    <li>Facts the AI assistant saved at your direction (for example allergies or movement limitations)</li>
+    <li>Your chat history and any food photos you attached to chats</li>
+    <li>Cached catalog foods, reminder settings, and app preferences</li>
+    <li>Stored sign-in tokens</li>
+  </ul>
+
+  <hr>
+
+  <h2>What is kept, and for how long</h2>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Data</th><th>Why it is kept</th><th>Retention</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Shared food catalog entries created when you scanned a barcode we had not seen before</td>
+          <td>These describe a <em>product</em> (name, brand, nutrition facts), not you. They are not linked to your account and cannot be traced back to you.</td>
+          <td>Retained indefinitely as part of the shared catalog</td>
+        </tr>
+        <tr>
+          <td>Food popularity counters</td>
+          <td>A count attached to a food to improve search ranking. It is attached to the food, not to your account.</td>
+          <td>Retained indefinitely</td>
+        </tr>
+        <tr>
+          <td>Purchase and subscription records</td>
+          <td>Held by Google Play and our subscription processor (RevenueCat) to meet financial, tax, refund, and legal record-keeping obligations. We never receive or store your payment-card number.</td>
+          <td>Retained by those providers under their own policies and applicable law</td>
+        </tr>
+        <tr>
+          <td>Crash and diagnostic reports</td>
+          <td>Collected by Sentry to diagnose app crashes. These contain device and app diagnostics and stack traces, not your fitness data.</td>
+          <td>Up to 90 days, then automatically deleted</td>
+        </tr>
+        <tr>
+          <td>Operational server logs</td>
+          <td>Standard request and error logs, which may contain your account's internal identifier. We do not log your messages, photos, food searches, or scanned barcodes.</td>
+          <td>Up to 30 days, then automatically deleted</td>
+        </tr>
+        <tr>
+          <td>Backup files you exported yourself</td>
+          <td>Created entirely on your device and saved to a location you chose. We never receive them and cannot delete them.</td>
+          <td>Under your control &mdash; delete them yourself</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <p><strong>Want to keep your data?</strong> Before deleting, you can export a complete copy from <strong>Profile &rarr; Advanced &rarr; Export data</strong>. The backup is written entirely on your device to a location you choose, and can be imported again later on this or another device.</p>
+  </div>
+
+  <div class="callout">
+    <p><strong>Want to erase your data but keep your account?</strong> Use <strong>Profile &rarr; Advanced &rarr; Wipe all data</strong> to erase everything Metrify stores on your device without deleting your account.</p>
+  </div>
+
+  <h2>Cancel your subscription first</h2>
+  <p>Deleting your Metrify account does <strong>not</strong> automatically cancel an active Premium subscription, because subscriptions are billed by Google Play rather than by us. If you have a Premium subscription, cancel it in the Google Play Store (<strong>Play Store &rarr; Profile icon &rarr; Payments &amp; subscriptions &rarr; Subscriptions</strong>) before or after deleting your account.</p>
+
+  <h2>Questions</h2>
+  <p>If anything here is unclear, or you need help with a deletion request, contact us at <a href="mailto:support@metrify.fit">support@metrify.fit</a>. For the full picture of what we collect and why, see our <a href="privacy.html">Privacy Policy</a>.</p>
+</main>
+
+<footer>
+  &copy; 2026 Verlin Software LLC &middot; <a href="faq.html">FAQ</a> &middot; <a href="articles/index.html">Articles</a> &middot; <a href="your-data.html">Your Data</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a> &middot; <a href="delete-account.html">Delete Account</a> &middot; <a href="mailto:support@metrify.fit">Contact</a>
+</footer>
+
+</body>
+</html>

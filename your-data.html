@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where is my data? How Metrify stores, backs up, and moves your data</title>
+<meta name="description" content="Metrify keeps every log on your phone, not on a server. What that means in practice: how to back up, what happens when you delete the app, how to move to a new phone, and how to restore a backup.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Metrify">
+<meta property="og:title" content="Where is my data? How Metrify stores, backs up, and moves your data">
+<meta property="og:description" content="Metrify keeps every log on your phone, not on a server. How to back up, what happens when you delete the app, and how to move to a new phone.">
+<meta property="og:url" content="https://metrify.fit/your-data.html">
+<meta property="og:image" content="https://metrify.fit/resources/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Metrify: the fitness tracker you can just talk to">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Where is my data? How Metrify stores, backs up, and moves your data">
+<meta name="twitter:description" content="Metrify keeps every log on your phone, not on a server. How to back up, what happens when you delete the app, and how to move to a new phone.">
+<meta name="twitter:image" content="https://metrify.fit/resources/og-card.png">
+<link rel="canonical" href="https://metrify.fit/your-data.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/metrify_logo.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="articles/article.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where is my Metrify data stored?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In a database on your phone. Every food log, weigh-in, workout, goal, custom food, and remembered fact lives locally on the device. There is no copy on Metrify's servers, which is why there is no web app and why deleting the app deletes the data." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I back up my Metrify data?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In the app, go to Profile, open Advanced, and tap Export data. Metrify writes your entire dataset to a single backup file and lets you save it anywhere: iCloud Drive, Google Drive, the Files app, or an email to yourself. The file contains your logs, goals, profile, workouts, saved meals, custom foods, and the assistant's remembered facts. Chat transcripts and photos are not included." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my data if I delete the app?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Uninstalling Metrify deletes the database with it, because your phone is the only place the data exists. Reinstalling the app does not bring it back. Export a backup first if you want the option to return." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my data move to a new phone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On iPhone, yes: Metrify's data is included in your iCloud or computer backup, so setting up a new iPhone from a backup or a direct transfer carries it over. On Android, no: Metrify deliberately opts out of Google's cloud backup because the database is unencrypted, so you must Export data on the old phone and Import data on the new one." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I restore a Metrify backup?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Go to Profile, open Advanced, and tap Import data, then pick your backup file. Importing replaces everything currently in the app on that device, and Metrify asks you to type REPLACE to confirm. If the file is damaged or the import fails, your existing data is left untouched." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I import data from another fitness app?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There is no file importer for other trackers, but you can backfill history by talking to the assistant. Pasting or dictating a list of past weigh-ins logs the whole history in one message. Weight, workouts, steps, and sleep already recorded in Apple Health or Google Health Connect can also come in through sync." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html"><img class="logo-mark" src="metrify_logo.svg" alt="Metrify logo">Metrify</a>
+    <div class="nav-links">
+      <a class="anchor-link" href="index.html#features">Features</a>
+      <a class="anchor-link" href="index.html#privacy">Privacy</a>
+      <a class="anchor-link" href="index.html#pricing">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="articles/index.html">Articles</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <header class="article-head">
+    <span class="eyebrow">Reference</span>
+    <h1>Where is my data?</h1>
+    <p class="standfirst">Metrify keeps everything on your phone instead of a server. That is the whole privacy model, and it changes how backups, phone upgrades, and deleting the app work. This page is the reference.</p>
+    <p class="byline">Last updated 8 August 2026</p>
+  </header>
+
+  <article>
+    <h2>The short answer</h2>
+    <p>Your data lives in a database on your phone. Every food log, weigh-in, workout, goal, custom food, saved meal, and remembered fact is written to local storage on the device you are holding. Metrify's servers run the AI conversation, but they do not keep a copy of your log. There is no account database with your history in it anywhere.</p>
+    <p>This is a deliberate trade. Nothing about your body or your habits sits on a server waiting to be breached, subpoenaed, or sold. In exchange, your phone is the single copy, and a single copy is only as safe as you make it. The rest of this page is about exactly that.</p>
+
+    <h2>What "on your device" means in practice</h2>
+    <p>Three consequences follow directly, and it is better to know them now than to discover them later:</p>
+    <p><strong>There is no automatic cloud copy from Metrify.</strong> Signing in on a second device does not bring your history with it. There is no web app to log into from a laptop, and that is not an oversight; a web app would require your data to live on a server.</p>
+    <p><strong>Deleting the app deletes the data.</strong> Uninstalling Metrify removes its database with it, on both platforms. Reinstalling gives you a fresh, empty app. If there is any chance you will want your history back, export a backup before you uninstall.</p>
+    <p><strong>Wiping data in the app is permanent.</strong> Profile &rarr; Advanced &rarr; Wipe all data erases your logs, goals, profile, and chat on that device. Your account and sign-in survive, but the data does not come back. Deleting your account entirely is a separate step, described on the <a href="delete-account.html">delete account</a> page.</p>
+
+    <h2>How to back up</h2>
+    <p>In the app: <strong>Profile &rarr; Advanced &rarr; Export data</strong>.</p>
+    <p>Metrify writes your entire dataset to a single file named like <code>metrify-backup-20260808-181530.json</code> and hands it to the system save dialog, so you choose where it goes: iCloud Drive, Google Drive, the Files app, or straight into an email to yourself. Anywhere that is not the same phone is a good choice.</p>
+    <p>One file is one complete snapshot. It contains:</p>
+    <ul>
+      <li>Food logs, weigh-ins, and exercise logs</li>
+      <li>Workout sessions, sets, routines, and custom exercises</li>
+      <li>Goals and your profile settings</li>
+      <li>Custom foods and saved meals</li>
+      <li>The assistant's remembered facts about you, such as dietary restrictions</li>
+      <li>Sleep logs and health sync history</li>
+    </ul>
+    <p>Two things deliberately stay out: chat transcripts and chat photos, which are treated as conversation rather than records, and your sign-in, which never leaves the device it belongs to. The backup file itself is plain, unencrypted JSON that you can open and read, so store it somewhere you trust, the same way you would treat an exported bank statement.</p>
+
+    <h2>How to restore</h2>
+    <p>In the app: <strong>Profile &rarr; Advanced &rarr; Import data</strong>, then pick the backup file.</p>
+    <p>Importing is a full replacement, not a merge. Everything currently in Metrify on that device, including chat history, is replaced by the contents of the backup, and the app makes you type REPLACE before it will proceed. Two safety properties are worth knowing:</p>
+    <p><strong>A failed import cannot half-destroy your data.</strong> The import commits all at once. If the file is damaged, invalid, or the import fails partway, your existing data is left exactly as it was.</p>
+    <p><strong>Backups are forward-compatible, not backward.</strong> A current app opens old backups fine. A backup made by a newer version of Metrify than the one installed is refused with a prompt to update the app first.</p>
+
+    <h2>Switching phones</h2>
+    <p>This is where the two platforms genuinely differ, and where most local-storage apps quietly lose people's history.</p>
+    <p><strong>iPhone to iPhone: your data comes along.</strong> Metrify's database is included in your phone's iCloud or computer backup. Setting up a new iPhone from that backup, or using Apple's direct device-to-device transfer, restores Metrify with your history intact. Note the difference between restoring a whole phone backup, which brings the data, and simply reinstalling the app from the App Store, which does not.</p>
+    <p><strong>Android to Android: your data does not transfer on its own.</strong> Metrify opts out of Google's cloud backup on purpose, because the database is not encrypted and we would rather not ship your health history to a server as a side effect of a phone upgrade. The move is manual: <strong>Export data</strong> on the old phone, get the file to the new phone, <strong>Import data</strong> there. It takes about a minute, but it only works if you still have the old phone or a backup file, so export before you trade in, reset, or lose access to the old device.</p>
+    <p>Crossing platforms in either direction works the same way as an Android move: export on one phone, import on the other. The backup format is identical on both.</p>
+
+    <h2>Coming from another app</h2>
+    <p>There is no file importer for other trackers' exports. What works instead:</p>
+    <p><strong>Backfill by chat.</strong> The assistant can log history, not just today. Pasting or dictating a list of past weigh-ins, for example "backfill my weight: June 1 182, June 15 180, July 1 178", records the whole series in one message. The same works for filling in past meals or workouts you want on the record.</p>
+    <p><strong>Health sync.</strong> Weight, workouts, steps, and sleep that another app already wrote into Apple Health or Google Health Connect can flow in through Metrify's sync, with you approving what gets logged.</p>
+
+    <h2>Habits worth having</h2>
+    <p>Export a backup on some schedule that matches how much history you are willing to lose: monthly is plenty for most people. Export one immediately before deleting the app, wiping data, resetting a phone, or trading a phone in. Keep the file in a cloud drive rather than on the same phone, since a backup stored only on the device it protects is not a backup. Old files stay useful, so keeping the last two or three around costs nothing and covers you if a recent export went wrong.</p>
+
+    <div class="summary">
+      <h2>Summary</h2>
+      <p>Metrify stores everything on your phone and nothing on its servers. Back up with Profile &rarr; Advanced &rarr; Export data, which produces one complete file you can keep anywhere. Restore with Import data, which replaces everything on the device and cannot partially fail. iPhones carry Metrify data through normal phone backups and transfers; Android phones do not, by design, so an Android or cross-platform move is always export then import. Deleting the app deletes the data, and there is no importer for other apps' files, but you can backfill history by talking to the assistant and pull synced data from Apple Health or Google Health Connect.</p>
+    </div>
+
+    <div class="article-cta">
+      <h2>Try Metrify</h2>
+      <p>In beta now, with full release planned for August 2026.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+    </div>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>&copy; 2026 Verlin Software LLC. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="faq.html">FAQ</a>
+      <a href="articles/index.html">Articles</a>
+      <a href="your-data.html">Your Data</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="delete-account.html">Delete Account</a>
+      <a href="mailto:support@metrify.fit">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
