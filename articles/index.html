@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles | Metrify</title>
+<meta name="description" content="Comparisons, design notes, and the math behind Metrify. How we handle exercise calories, why the assistant has database access, and how we stack up against other trackers.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Metrify">
+<meta property="og:title" content="Articles | Metrify">
+<meta property="og:description" content="Comparisons, design notes, and the math behind Metrify. How we handle exercise calories, why the assistant has database access, and how we stack up against other trackers.">
+<meta property="og:url" content="https://metrify.fit/articles/">
+<meta property="og:image" content="https://metrify.fit/resources/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Metrify: the fitness tracker you can just talk to">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Articles | Metrify">
+<meta name="twitter:description" content="Comparisons, design notes, and the math behind Metrify. How we handle exercise calories, why the assistant has database access, and how we stack up against other trackers.">
+<meta name="twitter:image" content="https://metrify.fit/resources/og-card.png">
+<link rel="canonical" href="https://metrify.fit/articles/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/metrify_logo.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="article.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Metrify Articles",
+  "description": "Comparisons, design notes, and the math behind Metrify.",
+  "url": "https://metrify.fit/articles/",
+  "publisher": { "@type": "Organization", "name": "Metrify" },
+  "blogPost": [
+    { "@type": "BlogPosting", "headline": "What Metrify does differently", "url": "https://metrify.fit/articles/what-metrify-does-differently.html", "datePublished": "2026-08-17" },
+    { "@type": "BlogPosting", "headline": "The fitness app you can just tell what you ate", "url": "https://metrify.fit/articles/just-tell-it-what-you-ate.html", "datePublished": "2026-07-31" },
+    { "@type": "BlogPosting", "headline": "Metrify vs MyFitnessPal: an honest comparison", "url": "https://metrify.fit/articles/metrify-vs-myfitnesspal.html", "datePublished": "2026-07-31" },
+    { "@type": "BlogPosting", "headline": "Metrify vs Welling: two AI-first food trackers, compared", "url": "https://metrify.fit/articles/metrify-vs-welling.html", "datePublished": "2026-07-31" },
+    { "@type": "BlogPosting", "headline": "Your workout should count once", "url": "https://metrify.fit/articles/your-workout-should-count-once.html", "datePublished": "2026-07-31" },
+    { "@type": "BlogPosting", "headline": "The assistant is the application, not just a chat window", "url": "https://metrify.fit/articles/the-chatbot-is-the-app.html", "datePublished": "2026-07-31" },
+    { "@type": "BlogPosting", "headline": "One application for the whole picture", "url": "https://metrify.fit/articles/one-app-whole-picture.html", "datePublished": "2026-07-31" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index.html"><img class="logo-mark" src="../metrify_logo.svg" alt="Metrify logo">Metrify</a>
+    <div class="nav-links">
+      <a class="anchor-link" href="../index.html#features">Features</a>
+      <a class="anchor-link" href="../index.html#privacy">Privacy</a>
+      <a class="anchor-link" href="../index.html#pricing">Pricing</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="index.html" class="current">Articles</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<header class="index-head wrap">
+  <h1>Articles</h1>
+  <p>Comparisons, design notes, and the math behind the app. We show our working, including the parts where other apps are better.</p>
+</header>
+
+<main class="wrap card-list">
+
+  <a class="card" href="what-metrify-does-differently.html">
+    <span class="kicker">Overview</span>
+    <h2>What Metrify does differently</h2>
+    <p>Every major design decision in one place: an assistant with database access, deterministic math, exercise counted once, on-device storage, and a permanent free tier with no card.</p>
+    <span class="date">17 August 2026</span>
+  </a>
+
+  <a class="card" href="just-tell-it-what-you-ate.html">
+    <span class="kicker">How it works</span>
+    <h2>The fitness app you can just tell what you ate</h2>
+    <p>Plenty of apps listen now. The three questions that actually separate them, including the one nobody asks before subscribing: can it fix what it just wrote?</p>
+    <span class="date">31 July 2026</span>
+  </a>
+
+  <a class="card" href="metrify-vs-myfitnesspal.html">
+    <span class="kicker">Comparison</span>
+    <h2>Metrify vs MyFitnessPal: an honest comparison</h2>
+    <p>Choosing between the established standard and a locally stored alternative. Covers pricing, where your data lives, logging methods, and how each app handles exercise calories.</p>
+    <span class="date">31 July 2026</span>
+  </a>
+
+  <a class="card" href="metrify-vs-welling.html">
+    <span class="kicker">Comparison</span>
+    <h2>Metrify vs Welling: two AI-first food trackers, compared</h2>
+    <p>The closest competitor we found, compared fairly. Both let you log by chatting, so the real differences are data storage, strength training, and pricing model.</p>
+    <span class="date">31 July 2026</span>
+  </a>
+
+  <a class="card" href="your-workout-should-count-once.html">
+    <span class="kicker">The math</span>
+    <h2>Your workout should count once</h2>
+    <p>The double-counting trap that silently halves your deficit, why most apps raise your calorie goal when you train, and why Metrify keeps it fixed.</p>
+    <span class="date">31 July 2026</span>
+  </a>
+
+  <a class="card" href="the-chatbot-is-the-app.html">
+    <span class="kicker">How it works</span>
+    <h2>The assistant is the application, not just a chat window</h2>
+    <p>An assistant without tools can only give advice. Metrify's writes to your log, edits it, and reads it back. What tool access actually makes possible.</p>
+    <span class="date">31 July 2026</span>
+  </a>
+
+  <a class="card" href="one-app-whole-picture.html">
+    <span class="kicker">How it works</span>
+    <h2>One application for the whole picture</h2>
+    <p>Food in one app, lifting in another, cardio on your watch. Why the combination matters more than any single feature, and what Metrify deliberately does not do.</p>
+    <span class="date">31 July 2026</span>
+  </a>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>&copy; 2026 Verlin Software LLC. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="../faq.html">FAQ</a>
+      <a href="index.html">Articles</a>
+      <a href="../your-data.html">Your Data</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Service</a>
+      <a href="../delete-account.html">Delete Account</a>
+      <a href="mailto:support@metrify.fit">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metrify: The fitness tracker you can just talk to</title>
+<meta name="description" content="Log meals, workouts, and weight by chat, voice, photo, or barcode. Metrify's AI understands you, real math does the counting, and your data is stored on your phone, not on our servers.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Metrify">
+<meta property="og:title" content="Metrify: The fitness tracker you can just talk to">
+<meta property="og:description" content="Log meals, workouts, and weight by chat, voice, photo, or barcode. Metrify's AI understands you, real math does the counting, and your data is stored on your phone, not on our servers.">
+<meta property="og:url" content="https://metrify.fit/">
+<meta property="og:image" content="https://metrify.fit/resources/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Metrify: the fitness tracker you can just talk to">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Metrify: The fitness tracker you can just talk to">
+<meta name="twitter:description" content="Log meals, workouts, and weight by chat, voice, photo, or barcode. Metrify's AI understands you, real math does the counting, and your data is stored on your phone, not on our servers.">
+<meta name="twitter:image" content="https://metrify.fit/resources/og-card.png">
+<link rel="canonical" href="https://metrify.fit/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/metrify_logo.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Metrify",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "iOS, Android",
+  "description": "Metrify is a fitness and nutrition tracker you operate by talking to it. You describe a meal in one sentence and its AI assistant logs every item, edits entries it already wrote when you correct them, answers questions from your logged history, and records workouts in the same conversation. It also accepts voice input, photos, and barcodes. All fitness data is stored locally on the device rather than in the cloud.",
+  "url": "https://metrify.fit/",
+  "author": { "@type": "Organization", "name": "Verlin Software LLC" },
+  "featureList": [
+    "Log an entire meal by describing it in one sentence",
+    "Assistant edits log entries it already wrote when you correct it",
+    "Assistant answers questions from your own logged history",
+    "Repeat a previous meal by asking for it in plain language",
+    "Photo meal logging, including typed corrections that override part of the photo",
+    "Voice input: speak a meal or workout instead of typing it",
+    "Log workouts in the same conversation as food",
+    "Log, correct, or backfill body weight measurements by talking to it",
+    "Barcode scanning",
+    "Structured strength training with routines, sets and reps",
+    "Weekly muscle heatmap showing which muscles the week's training volume hit",
+    "Adherence heatmap of logged days with streak tracking",
+    "Remembers dietary restrictions across conversations, stored on device",
+    "Weight trends with 7-day smoothing and weight projection",
+    "Apple Health and Google Health Connect sync",
+    "All fitness data stored locally on the device",
+    "Fixed daily calorie goal that does not increase when exercise is logged"
+  ],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Unlimited manual food, weight and workout logging, 3 AI chat messages per day, full Workout Lab, full progress charts, health sync, all data on-device."
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium monthly",
+      "price": "9.99",
+      "priceCurrency": "USD",
+      "description": "Near-unlimited AI chat and photo meal logging, billed monthly."
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium annual",
+      "price": "69.99",
+      "priceCurrency": "USD",
+      "description": "Near-unlimited AI chat and photo meal logging, billed yearly."
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --brand:        #FF7A00;
+    --brand-soft:   rgba(255, 122, 0, 0.12);
+    --bg:           #141414;
+    --bg-raised:    #1f1f1f;
+    --bg-card:      #242424;
+    --border:       #333333;
+    --text:         #f2f2f2;
+    --text-dim:     #ababab;
+    --text-faint:   #6e6e6e;
+    --green:        #30D158;
+    --radius:       16px;
+    --font-display: "Archivo Black", "Arial Black", "Segoe UI", sans-serif;
+    --font-body:    "Archivo", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  a { color: var(--brand); text-decoration: none; }
+
+  /* ============ Nav ============ */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-display); font-weight: 400;
+    font-size: 1.15rem; color: var(--text);
+  }
+  .logo-mark { height: 34px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { color: var(--text-dim); font-size: 0.95rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--text); }
+  /* Below 720px, drop the in-page anchors (they only jump around this page) but keep
+     FAQ and Articles, which are separate destinations with no other route in on mobile. */
+  @media (max-width: 720px) {
+    .nav-links { gap: 16px; }
+    .nav-links a.anchor-link { display: none; }
+  }
+  @media (max-width: 460px) {
+    .nav-links { gap: 12px; }
+    .nav-links a:not(.btn) { font-size: 0.85rem; }
+    .nav-links .btn { padding: 8px 14px; font-size: 0.82rem; }
+    .logo { font-size: 1rem; }
+    .logo-mark { height: 28px; }
+  }
+
+  /* ============ Buttons ============ */
+  .btn {
+    display: inline-block; padding: 12px 26px; border-radius: 999px;
+    font-weight: 700; font-size: 1rem; transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary {
+    background: var(--brand); color: #141414 !important;
+  }
+  .btn-primary:hover { transform: translateY(-1px); background: #ff8c1f; }
+  .btn-ghost {
+    border: 1px solid var(--border); color: var(--text) !important;
+  }
+  .btn-ghost:hover { border-color: var(--text-faint); }
+  .nav-links .btn { padding: 9px 20px; font-size: 0.9rem; }
+
+  /* ============ Hero ============ */
+  .hero {
+    padding: 88px 0 72px;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+  }
+  @media (max-width: 860px) { .hero { grid-template-columns: 1fr; padding-top: 56px; gap: 36px; } }
+
+  .badge {
+    display: inline-block; padding: 6px 14px; border-radius: 999px;
+    background: var(--brand-soft); color: var(--brand);
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  h1, h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  h1 {
+    font-size: clamp(2.1rem, 4.8vw, 3.2rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  h1 .accent { color: var(--brand); }
+  .hero p.lede {
+    font-size: 1.2rem; color: var(--text-dim); max-width: 34em; margin-bottom: 32px;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 28px; }
+
+  .store-badges { display: flex; gap: 12px; flex-wrap: wrap; }
+  .store-badge {
+    display: flex; align-items: center; gap: 10px;
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 8px 16px; color: var(--text-dim); font-size: 0.8rem; line-height: 1.3;
+    background: var(--bg-raised);
+  }
+  .store-badge b { display: block; color: var(--text); font-size: 0.95rem; }
+  .store-badge svg { width: 22px; height: 22px; color: var(--text-dim); flex-shrink: 0; }
+
+  /* ============ Phone mockup ============ */
+  .phone {
+    width: 300px; margin: 0 auto;
+    background: #0d0d0d; border: 3px solid #383838; border-radius: 42px;
+    padding: 14px 12px; box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px #000;
+  }
+  .phone-screen {
+    background: #000; border-radius: 30px; overflow: hidden; display: block;
+  }
+  .phone-video {
+    width: 100%; height: auto; display: block;
+    aspect-ratio: 1080 / 2338; object-fit: cover;
+  }
+  .phone-topbar {
+    padding: 14px 16px 10px; border-bottom: 1px solid var(--border);
+    font-weight: 700; font-size: 0.9rem; text-align: center; color: var(--text);
+  }
+  .chat { flex: 1; padding: 14px 12px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+  .bubble {
+    max-width: 85%; padding: 10px 14px; border-radius: 18px; font-size: 0.82rem; line-height: 1.45;
+  }
+  .bubble.user {
+    align-self: flex-end; background: var(--brand); color: #141414; font-weight: 500;
+    border-bottom-right-radius: 5px;
+  }
+  .bubble.bot {
+    align-self: flex-start; background: var(--bg-card); color: var(--text);
+    border: 1px solid var(--border); border-bottom-left-radius: 5px;
+  }
+  .food-card {
+    align-self: flex-start; width: 92%;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 12px; font-size: 0.78rem;
+  }
+  .food-card .fc-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .food-card .fc-head b { font-size: 0.85rem; }
+  .food-card .kcal { color: var(--brand); font-weight: 800; }
+  .fc-row { display: flex; align-items: center; gap: 12px; }
+  .donut {
+    width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+    background: conic-gradient(#FF375F 0 38%, #0A84FF 38% 72%, #FFD60A 72% 100%);
+    display: grid; place-items: center;
+  }
+  .donut::after { content: ""; width: 32px; height: 32px; border-radius: 50%; background: var(--bg-card); }
+  .macros { color: var(--text-dim); line-height: 1.7; }
+  .macros b { color: var(--text); }
+  .fc-actions { display: flex; gap: 8px; margin-top: 10px; }
+  .chip {
+    font-size: 0.7rem; font-weight: 600; padding: 4px 12px; border-radius: 999px;
+    border: 1px solid var(--border); color: var(--text-dim);
+  }
+  .chip.primary { color: var(--brand); border-color: rgba(255,122,0,0.4); }
+  .phone-input {
+    margin: 10px 12px 14px; padding: 10px 16px; border-radius: 999px;
+    background: var(--bg-card); border: 1px solid var(--border);
+    color: var(--text-faint); font-size: 0.8rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .phone-note {
+    text-align: center; margin-top: 14px; font-size: 0.78rem; color: var(--text-faint);
+  }
+
+  /* ============ Sections ============ */
+  section { padding: 72px 0; }
+  section.alt { background: var(--bg-raised); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .section-head { text-align: center; max-width: 620px; margin: 0 auto 48px; }
+  .section-head h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); letter-spacing: -0.02em; margin-bottom: 12px; }
+  .section-head p { color: var(--text-dim); font-size: 1.05rem; }
+
+  .feature-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+  @media (max-width: 860px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .feature-grid { grid-template-columns: 1fr; } }
+  .feature {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 26px;
+  }
+  .feature .icon {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--brand-soft);
+    display: grid; place-items: center; margin-bottom: 16px; color: var(--brand);
+  }
+  .feature .icon svg { width: 22px; height: 22px; }
+  .feature h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  .feature p { color: var(--text-dim); font-size: 0.92rem; }
+
+  /* ============ "Just say it" capability grid ============ */
+  .says { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 780px) { .says { grid-template-columns: 1fr; } }
+  .say {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 22px 24px;
+  }
+  .say .q {
+    display: inline-block; background: var(--brand); color: #141414;
+    font-weight: 600; font-size: 0.92rem; line-height: 1.4;
+    padding: 9px 15px; border-radius: 16px; border-bottom-right-radius: 5px;
+    margin-bottom: 14px;
+  }
+  .say .a { color: var(--text-dim); font-size: 0.93rem; margin: 0; }
+  .say .a b { color: var(--text); font-weight: 600; }
+  .says-note {
+    text-align: center; margin-top: 30px; color: var(--text-faint); font-size: 0.9rem;
+  }
+  @media (max-width: 600px) { .say { padding: 20px; } }
+
+  /* ============ Feature chapters ============ */
+  .chapter {
+    display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+    padding: 52px 0;
+  }
+  .chapter + .chapter { border-top: 1px solid var(--border); }
+  .chapter.flip .chapter-copy { order: 2; }
+  .chapter.flip .chapter-shot { order: 1; }
+  .chapter h3 {
+    font-family: var(--font-display); font-weight: 400;
+    font-size: clamp(1.35rem, 3vw, 1.75rem); letter-spacing: -0.01em;
+    line-height: 1.2; margin-bottom: 14px;
+  }
+  .chapter h3 .accent { color: var(--brand); }
+  .chapter p { color: var(--text-dim); margin-bottom: 14px; font-size: 0.97rem; }
+  .chapter p:last-child { margin-bottom: 0; }
+  .chapter-shot { display: flex; justify-content: center; }
+  .chapter-shot img {
+    width: 100%; max-width: 300px; height: auto; display: block; border-radius: 26px;
+    border: 1px solid var(--border); background: #000;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+  }
+  @media (max-width: 820px) {
+    .chapter { grid-template-columns: 1fr; gap: 28px; padding: 38px 0; }
+    .chapter.flip .chapter-copy { order: 1; }
+    .chapter.flip .chapter-shot { order: 2; }
+    .chapter-shot img { max-width: 260px; }
+  }
+
+  .math-band {
+    text-align: center; max-width: 660px; margin: 52px auto 0; padding-top: 48px;
+    border-top: 1px solid var(--border);
+  }
+  .math-band h2 { font-size: clamp(1.5rem, 3.4vw, 2rem); letter-spacing: -0.02em; margin-bottom: 12px; }
+  .math-band p { color: var(--text-dim); }
+
+  /* ============ Conversation thread ============ */
+  .thread {
+    max-width: 470px; margin: 0 auto;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .t-user {
+    align-self: flex-end; max-width: 88%;
+    background: var(--brand); color: #141414; font-weight: 600;
+    padding: 11px 16px; border-radius: 18px; border-bottom-right-radius: 5px;
+    font-size: 0.95rem; line-height: 1.45;
+  }
+  .t-card {
+    align-self: flex-start; width: 94%;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    border-radius: 14px; padding: 14px 16px; font-size: 0.88rem;
+  }
+  .t-card.t-edit { border-left-color: var(--brand); }
+  .t-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+  .t-head b { font-size: 0.95rem; }
+  .t-head .kcal { color: var(--brand); font-weight: 800; white-space: nowrap; }
+  .t-row { display: flex; justify-content: space-between; gap: 12px; color: var(--text-dim); padding: 3px 0; }
+  .t-row span:first-child { color: var(--text); }
+  .t-old { text-decoration: line-through; color: var(--text-faint); font-weight: 500; margin-right: 8px; }
+  .t-new { color: var(--green); font-weight: 800; }
+  .t-agent {
+    align-self: flex-start; max-width: 94%;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 18px; border-bottom-left-radius: 5px;
+    padding: 12px 16px; font-size: 0.92rem; color: var(--text); line-height: 1.5;
+  }
+  .t-note { text-align: center; color: var(--text-faint); font-size: 0.88rem; margin: 26px auto 44px; max-width: 40em; }
+  .says-trim { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 820px) { .says-trim { grid-template-columns: 1fr; } }
+
+  /* ============ How it works ============ */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  @media (max-width: 720px) { .steps { grid-template-columns: 1fr; } }
+  .step { text-align: center; padding: 0 12px; }
+  .step .num {
+    width: 40px; height: 40px; border-radius: 50%; margin: 0 auto 16px;
+    background: var(--brand); color: #141414; font-weight: 800;
+    display: grid; place-items: center; font-size: 1.1rem;
+  }
+  .step h3 { margin-bottom: 8px; font-size: 1.05rem; }
+  .step p { color: var(--text-dim); font-size: 0.92rem; }
+
+  /* ============ Privacy ============ */
+  .privacy-band {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+  }
+  @media (max-width: 820px) { .privacy-band { grid-template-columns: 1fr; } }
+  .privacy-band h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); letter-spacing: -0.02em; margin-bottom: 16px; }
+  .privacy-band p { color: var(--text-dim); margin-bottom: 14px; }
+  .check-list { list-style: none; margin-top: 8px; }
+  .check-list li {
+    padding-left: 30px; position: relative; margin-bottom: 12px; color: var(--text);
+  }
+  .check-list li::before {
+    content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800;
+  }
+  .check-list li span { color: var(--text-dim); }
+
+  /* ============ Placeholders ============ */
+  .placeholder {
+    border: 2px dashed #4a4a4a; border-radius: var(--radius);
+    background: rgba(255,255,255,0.02);
+    display: grid; place-items: center; text-align: center;
+    color: var(--text-faint); font-size: 0.85rem; padding: 16px;
+  }
+  .placeholder .ph-icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 900px; margin: 0 auto; }
+  @media (max-width: 780px) { .shots { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 460px) { .shots { grid-template-columns: 1fr; max-width: 320px; } }
+  .shot { margin: 0; }
+  .shot img {
+    width: 100%; display: block; border-radius: 24px;
+    border: 1px solid var(--border); background: #000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+  .shot figcaption { text-align: center; margin-top: 14px; color: var(--text-dim); font-size: 0.92rem; font-weight: 600; }
+  .privacy-shot { display: flex; justify-content: center; }
+  .privacy-shot img {
+    width: 100%; max-width: 300px; height: auto; display: block; border-radius: 26px;
+    border: 1px solid var(--border); background: #000;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+  }
+
+  /* ============ Pricing ============ */
+  .plans {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 380px)); gap: 24px; justify-content: center;
+  }
+  @media (max-width: 720px) { .plans { grid-template-columns: 1fr; } }
+  .plan {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 32px; position: relative;
+  }
+  .plan.featured { border-color: var(--brand); box-shadow: 0 0 40px rgba(255,122,0,0.12); }
+  .plan .tag {
+    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+    background: var(--brand); color: #141414; font-size: 0.72rem; font-weight: 800;
+    padding: 4px 14px; border-radius: 999px; letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .plan h3 { font-size: 1.2rem; margin-bottom: 4px; }
+  .plan .price { font-family: var(--font-display); font-weight: 400; font-size: 2.1rem; letter-spacing: -0.01em; }
+  .plan .price small { font-size: 0.95rem; color: var(--text-dim); font-weight: 500; }
+  .plan .sub { color: var(--text-dim); font-size: 0.88rem; margin-bottom: 20px; }
+  .plan ul { list-style: none; margin-bottom: 24px; }
+  .plan li { padding-left: 28px; position: relative; margin-bottom: 10px; font-size: 0.93rem; color: var(--text-dim); }
+  .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--brand); font-weight: 800; }
+  .plan li .fine { display: block; font-size: 0.76rem; color: var(--text-faint); margin-top: 2px; }
+  .plan .btn { width: 100%; text-align: center; }
+
+  /* ============ CTA band ============ */
+  .cta-band { text-align: center; }
+  .cta-band h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); letter-spacing: -0.02em; margin-bottom: 14px; }
+  .cta-band p { color: var(--text-dim); margin-bottom: 28px; }
+
+  /* ============ Footer ============ */
+  footer {
+    border-top: 1px solid var(--border); padding: 40px 0; color: var(--text-faint); font-size: 0.85rem;
+  }
+  .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { color: var(--text-dim); }
+
+  /* ============ Mobile spacing pass ============ */
+  /* Phones kept the full desktop vertical rhythm, which left oversized gaps
+     between sections and over-padded cards. Tighten the vertical scale and
+     interior padding while keeping the 24px side gutters. */
+  @media (max-width: 600px) {
+    section { padding: 48px 0; }
+    .hero { padding: 36px 0 44px; gap: 30px; }
+    .hero p.lede { margin-bottom: 26px; }
+    .hero-ctas { margin-bottom: 22px; }
+    .section-head { margin-bottom: 30px; }
+    .feature-grid { gap: 14px; }
+    .feature { padding: 22px; }
+    .steps { gap: 26px; }
+    .privacy-band { gap: 28px; }
+    .shots { gap: 16px; }
+    .plans { gap: 16px; }
+    .plan { padding: 26px 22px; }
+    .cta-band p { margin-bottom: 24px; }
+    footer { padding: 32px 0; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="logo"><img class="logo-mark" src="metrify_logo.svg" alt="Metrify logo">Metrify</div>
+    <div class="nav-links">
+      <a class="anchor-link" href="#features">Features</a>
+      <a class="anchor-link" href="#privacy">Privacy</a>
+      <a class="anchor-link" href="#pricing">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="articles/index.html">Articles</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div>
+    <span class="badge">Now in beta &middot; Full release August 2026</span>
+    <h1>The fitness tracker you can <span class="accent">just talk to.</span></h1>
+    <p class="lede">
+      Log meals, workouts, and weight by chatting, like texting a friend who
+      happens to be a nutrition nerd. Metrify's AI understands what you say,
+      and real math does the counting. No dropdowns, no guesswork.
+    </p>
+    <div class="hero-ctas">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+      <a href="#features" class="btn btn-ghost">See how it works</a>
+    </div>
+    <div class="store-badges">
+      <div class="store-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="10" y1="18.5" x2="14" y2="18.5"/></svg><span>Coming soon to the<br><b>App Store</b></span></div>
+      <div class="store-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>Coming soon to<br><b>Google Play</b></span></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="phone">
+      <div class="phone-screen">
+        <video class="phone-video" autoplay muted loop playsinline preload="metadata"
+               aria-label="Demo video: logging a meal in Metrify by typing one sentence in chat, which becomes food entries with calories and macros"
+               poster="resources/screen-log-dashboard.jpg">
+          <source src="resources/demo_vid.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="alt" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Everything counts. You barely have to.</h2>
+      <p>Food, training, weight, and sleep in one app, logged in seconds by text, voice, photo, or barcode. Here is what each piece actually does.</p>
+    </div>
+
+    <div class="chapter" id="chat-logging">
+      <div class="chapter-copy">
+        <h3>Log by talking</h3>
+        <p>Describe your meal in one sentence: "two eggs and toast with butter." Metrify parses it, matches every item against a 447,000-food USDA-backed catalog, and logs each one as its own entry with real nutrition data.</p>
+        <p>Every log comes back as a card you can edit or undo. Type it, say it with voice input, snap a photo of your plate, or scan a barcode.</p>
+      </div>
+      <div class="chapter-shot"><img src="resources/screen-chat-logging.jpg" alt="Metrify chat turning a typed sentence into two logged food entries with calories, grams, and a macro donut" loading="lazy" width="720" height="1405"></div>
+    </div>
+
+    <div class="chapter flip" id="workout-lab">
+      <div class="chapter-copy">
+        <h3>Workout Lab: <span class="accent">see every muscle you hit</span></h3>
+        <p>Workout Lab is a full strength training system: build routines, log sets and reps, and track session volume and calories. Saved routines replay by name in chat, so "log my Push Day workout" logs its exercises, sets, reps, and weights.</p>
+        <p>Training history renders as a weekly muscle heatmap: front and back body diagrams where brighter means more of the week's volume hit that muscle. Progression graphs track each lift over time.</p>
+      </div>
+      <div class="chapter-shot"><img src="resources/screen-workout-lab.jpg" alt="Workout Lab weekly muscle heatmap with front and back body diagrams, session calories, total volume, and set count" loading="lazy" width="720" height="1405"></div>
+    </div>
+
+    <div class="chapter" id="progress">
+      <div class="chapter-copy">
+        <h3>Progress that means something</h3>
+        <p>Weight trends use a 7-day smoothed average, so daily water swings do not bury the real line. The projection decelerates as you lose mass, because maintenance falls with body weight.</p>
+        <p>Food, training, and sleep each get their own charts, and meals carry micronutrients too: fiber, sodium, iron, and more.</p>
+      </div>
+      <div class="chapter-shot"><img src="resources/screen-progress-weight.jpg" alt="Weight trend chart with 7-day average and a projected path to goal weight" loading="lazy" width="1080" height="2098"></div>
+    </div>
+
+    <div class="chapter flip" id="streaks">
+      <div class="chapter-copy">
+        <h3>Your streak, on one heatmap</h3>
+        <p>The adherence heatmap shows every logged day as a square: green when you hit your calorie goal, red when you went over, gray when nothing was logged. Tap any day to open its log.</p>
+        <p>Streaks come from the same data, so the chain you are building reflects what you actually logged.</p>
+      </div>
+      <div class="chapter-shot"><img src="resources/screen-progress-overview.jpg" alt="Adherence heatmap showing logged days as green, red, and gray squares with streak count and daily averages" loading="lazy" width="1080" height="2099"></div>
+    </div>
+
+    <div class="chapter" id="health-sync">
+      <div class="chapter-copy">
+        <h3>Syncs with your watch and scale</h3>
+        <p>Connect Apple Health or Google Health Connect and Metrify pulls in weight, workouts, steps, and sleep automatically. You approve what gets logged.</p>
+        <p>Steps are tracked as their own metric and never converted into exercise burn, so a synced walk cannot count twice.</p>
+      </div>
+      <div class="chapter-shot"><img src="resources/screen-connections-health.jpg" alt="Connections screen syncing weight, workouts, steps, and sleep from a health hub" loading="lazy" width="1080" height="2099"></div>
+    </div>
+
+    <div class="math-band">
+      <h2>Real math, not vibes</h2>
+      <p>The AI reads what you meant. Deterministic formulas on your phone do every calculation: calories, macros, BMR, exercise burn, weight projections. The model never invents a number.</p>
+    </div>
+  </div>
+</section>
+
+<section id="assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>It doesn't just listen. It does the work.</h2>
+      <p>An assistant without tools can only give advice. Metrify's assistant has them: it writes to your log, edits it, and reads it back. One day, one thread:</p>
+    </div>
+    <div class="thread">
+      <div class="t-user">Chicken breast, rice, broccoli, and a diet coke</div>
+      <div class="t-card">
+        <div class="t-head"><b>4 items logged</b><span class="kcal">520 cal</span></div>
+        <div class="t-row"><span>Chicken Breast, Grilled</span><span>172 g &middot; 284 cal</span></div>
+        <div class="t-row"><span>Cooked White Rice</span><span>158 g &middot; 205 cal</span></div>
+        <div class="t-row"><span>Broccoli, Steamed</span><span>90 g &middot; 31 cal</span></div>
+        <div class="t-row"><span>Diet Coke</span><span>1 can &middot; 0 cal</span></div>
+      </div>
+      <div class="t-user">actually the rice was more like 300g</div>
+      <div class="t-card t-edit">
+        <div class="t-head"><b>Updated: Cooked White Rice</b><span class="kcal"><span class="t-old">205 cal</span><span class="t-new">390 cal</span></span></div>
+        <div class="t-row"><span>Edited in place, no duplicate row</span><span>dinner is now 705 cal</span></div>
+      </div>
+      <div class="t-user">how much protein do I have left today?</div>
+      <div class="t-agent">You're at 118 g of your 150 g goal, so 32 g left. A cup of Greek yogurt would just about close it.</div>
+      <div class="t-user">log 3x8 bench at 185</div>
+      <div class="t-card">
+        <div class="t-head"><b>Workout logged: Bench Press</b><span class="kcal">4,440 lb</span></div>
+        <div class="t-row"><span>3 sets &times; 8 reps @ 185 lb</span><span>total volume</span></div>
+      </div>
+      <div class="t-user">I weighed 178 this morning</div>
+      <div class="t-card">
+        <div class="t-head"><b>Weigh-in logged</b><span class="kcal">178.0 lb</span></div>
+        <div class="t-row"><span>7-day trend</span><span>178.6 lb and falling</span></div>
+      </div>
+    </div>
+    <p class="t-note">One thread: written, corrected, and queried. Every number is computed on your device, never guessed by the model.</p>
+    <div class="says says-trim">
+      <div class="say">
+        <span class="q">"Same lunch as yesterday"</span>
+        <p class="a"><b>Pulls your actual previous entry</b> instead of making you rebuild it from scratch.</p>
+      </div>
+      <div class="say">
+        <span class="q">[photo of your plate] "the rice was about 300g"</span>
+        <p class="a">Takes the rest of the meal from the picture and <b>your number for the rice</b>, without logging rice twice.</p>
+      </div>
+      <div class="say">
+        <span class="q">"Remember that I'm vegetarian"</span>
+        <p class="a"><b>Carried into every future conversation</b>, stored on your device. Ask it to forget whenever you like.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="alt" id="privacy">
+  <div class="wrap privacy-band">
+    <div>
+      <h2>Your body's data belongs on <span style="color: var(--brand)">your phone.</span></h2>
+      <p>
+        Most fitness apps store everything you log on their servers. Metrify doesn't.
+        Every meal, weigh-in, workout, and goal is stored on your device and never stored anywhere else.
+      </p>
+      <ul class="check-list">
+        <li>All fitness data is stored on-device <span>(food logs, weights, workouts, goals, custom foods)</span></li>
+        <li>No selling, no ads, no data brokers <span>&nbsp;&middot;&nbsp; we couldn't sell your logs if we wanted to; our servers don't keep them</span></li>
+        <li>Delete the app, delete the data <span>&nbsp;&middot;&nbsp; it was never stored anywhere else</span></li>
+      </ul>
+    </div>
+    <div class="privacy-shot">
+      <img src="resources/screen-log-dashboard.jpg" alt="Metrify Log screen showing a day of meals, calories, and macros, all stored on the device" loading="lazy" width="1080" height="2108">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Three steps. Ten seconds.</h2>
+      <p>Tracking only works if you actually do it. Logging a meal takes one sentence and about ten seconds.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Say it</h3>
+        <p>Text, voice, or photo. Describe your meal or workout however feels natural.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Confirm it</h3>
+        <p>Metrify shows exactly what it understood, with calories and macros. Tap to tweak, undo, or split into meals.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>See it add up</h3>
+        <p>Your day, your trends, your goals. Always current, always computed from real data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="alt" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Free to track. Forever.</h2>
+      <p>Manual logging never costs a cent. Premium unlocks the full AI experience.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Free</h3>
+        <div class="price">$0</div>
+        <p class="sub">Everything you need to track by hand</p>
+        <ul>
+          <li>Unlimited manual food, weight &amp; workout logging</li>
+          <li>3 AI chat messages per day</li>
+          <li>Full Workout Lab</li>
+          <li>Full progress charts &amp; history</li>
+          <li>Apple Health &amp; Health Connect sync</li>
+          <li>100% on-device data storage, same as Premium</li>
+        </ul>
+        <a href="#beta" class="btn btn-ghost">Start free</a>
+      </div>
+      <div class="plan featured">
+        <span class="tag">Recommended</span>
+        <h3>Premium</h3>
+        <div class="price">$9.99<small>/mo</small></div>
+        <p class="sub">or $69.99/yr (about $5.83/mo, save 42%)</p>
+        <ul>
+          <li>Everything in Free</li>
+          <li>Near-unlimited AI chat <span class="fine">Fair use: capped at 75 messages per day</span></li>
+          <li>Photo meal logging</li>
+        </ul>
+        <a href="#beta" class="btn btn-primary">Go Premium</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="beta">
+  <div class="wrap">
+    <h2>Be first in line.</h2>
+    <p>Metrify is in beta now, with full release planned for August 2026.<br>Join the waitlist and we'll email you the day it goes live. Android users can opt in as testers early.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>© 2026 Verlin Software LLC. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="faq.html">FAQ</a>
+      <a href="articles/index.html">Articles</a>
+      <a href="your-data.html">Your Data</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="delete-account.html">Delete Account</a>
+      <a href="mailto:support@metrify.fit">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

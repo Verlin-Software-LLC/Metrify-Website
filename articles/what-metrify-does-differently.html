@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Metrify does differently</title>
+<meta name="description" content="An assistant with database access, deterministic math, exercise counted once, on-device storage, and a permanent free tier. Metrify's design decisions, explained.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Metrify">
+<meta property="og:title" content="What Metrify does differently">
+<meta property="og:description" content="An assistant with database access, deterministic math, exercise counted once, on-device storage, and a permanent free tier. Metrify's design decisions, explained.">
+<meta property="og:url" content="https://metrify.fit/articles/what-metrify-does-differently.html">
+<meta property="og:image" content="https://metrify.fit/resources/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Metrify: the fitness tracker you can just talk to">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Metrify does differently">
+<meta name="twitter:description" content="An assistant with database access, deterministic math, exercise counted once, on-device storage, and a permanent free tier. Metrify's design decisions, explained.">
+<meta name="twitter:image" content="https://metrify.fit/resources/og-card.png">
+<link rel="canonical" href="https://metrify.fit/articles/what-metrify-does-differently.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/metrify_logo.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="article.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Metrify does differently",
+  "description": "An assistant with database access, deterministic math, exercise counted once, on-device storage, and a permanent free tier. Metrify's design decisions, explained.",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "author": { "@type": "Organization", "name": "Metrify" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Metrify",
+    "logo": { "@type": "ImageObject", "url": "https://metrify.fit/metrify_logo.svg" }
+  },
+  "mainEntityOfPage": "https://metrify.fit/articles/what-metrify-does-differently.html"
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index.html"><img class="logo-mark" src="../metrify_logo.svg" alt="Metrify logo">Metrify</a>
+    <div class="nav-links">
+      <a class="anchor-link" href="../index.html#features">Features</a>
+      <a class="anchor-link" href="../index.html#privacy">Privacy</a>
+      <a class="anchor-link" href="../index.html#pricing">Pricing</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="index.html" class="current">Articles</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <header class="article-head">
+    <span class="eyebrow"><a href="index.html">Overview</a></span>
+    <h1>What Metrify does differently</h1>
+    <p class="standfirst">Not a feature list. The design decisions most trackers made one way and Metrify made the other, and the reasoning behind each.</p>
+    <p class="byline">Published 17 August 2026</p>
+  </header>
+
+  <article>
+    <h2>The short version</h2>
+    <p>Fitness trackers mostly differ in polish. Metrify differs in decisions. Six of them, specifically:</p>
+    <ul>
+      <li>You operate it by talking to it. The assistant has real access to your data, so it logs, edits, and answers questions instead of giving advice next to a form.</li>
+      <li>The AI never computes your numbers. Deterministic formulas on your device do.</li>
+      <li>Exercise is counted once, against a fixed sedentary baseline. Your calorie goal does not move when you train.</li>
+      <li>All fitness data is stored locally on your phone, not in a cloud account.</li>
+      <li>Food logging and structured strength training live in the same app.</li>
+      <li>The free tier is permanent, genuinely useful, and asks for no payment details.</li>
+    </ul>
+    <p>The rest of this page walks through each one. If you want named comparisons instead, see <a href="metrify-vs-myfitnesspal.html">Metrify vs MyFitnessPal</a> and <a href="metrify-vs-welling.html">Metrify vs Welling</a>.</p>
+
+    <h2>The assistant is the interface, not a feature</h2>
+    <p>Most AI in fitness apps is a chat window sitting next to the real interface. It can discuss protein in general terms, but the actual logging still happens in search boxes and serving-size pickers, because the model has no access to your data.</p>
+    <p>Metrify inverts that. The assistant has a catalog of tools it calls against your database: it can search foods, write entries singly or in bulk, edit entries it already wrote, save custom foods, log exercise and workout sessions, and read back your history and daily summaries. The chat is not a companion to the app. It is how you use the app.</p>
+    <p>In practice: "chicken breast, rice, broccoli, and a diet coke" becomes four logged entries from one message. "Actually make that two eggs, not three" corrects the row it just wrote instead of adding a duplicate. A photo of a plate plus "the rice was about 300g" logs the plate with your typed amount overriding that one item. "How much protein do I have left today?" is answered from your actual log. "Log 3x8 bench at 185" works in the same conversation as dinner.</p>
+    <p>It also remembers what you tell it. Say once that you are vegetarian or eating gluten free and it carries that into every later conversation. These are not preset diet checkboxes; they are arbitrary facts you state, stored on your device, and it forgets any of them on request.</p>
+
+    <h2>The model reads, the formulas count</h2>
+    <p>A language model is good at understanding "a bowl of chili and half a cornbread muffin". It is not a calculator, and Metrify never uses it as one.</p>
+    <p>The assistant's job ends at understanding what you said and picking the right food or exercise. Every number after that (calories, macros, BMR, daily burn, net, weight projection) is computed deterministically on your device with real formulas. The same inputs always produce the same outputs, and you can check the arithmetic yourself. The AI does not invent your numbers.</p>
+
+    <h2>Your workout counts once</h2>
+    <p>When you set up most trackers, you pick an activity level. If you choose one that reflects your life, including your four gym sessions a week, that estimate already contains your training. Then you log a workout and the app raises your calorie goal for the day. The same calories are now counted twice: once inside the activity level, once as logged exercise. Your real deficit is smaller than the one on screen, and the symptom is weight loss that stalls for no visible reason.</p>
+    <p>Raising the goal when you train is a documented, deliberate design in several major trackers, and it can usually be switched off. The trap is the default, plus the setup question that quietly absorbs your training.</p>
+    <p>Metrify removes both. There is no activity level question. The baseline is the Mifflin-St Jeor BMR multiplied by 1.2, the sedentary multiplier, which covers your body at rest plus ordinary daily living and nothing else. Logged exercise is counted exactly once, on top, as that day's burn. Your calorie goal never moves when you train: a hard session shows up as a bigger number on the burn side of the ledger, and the daily net stays a single subtraction, calories in minus calories burned.</p>
+    <p>The full argument, including the honest case for deliberately eating calories back, is in <a href="your-workout-should-count-once.html">your workout should count once</a>.</p>
+
+    <h2>Your data stays on your phone</h2>
+    <p>Every food log, weigh-in, workout, goal, and custom food is stored locally on your device in SQLite. There is no Metrify account database holding your history. Delete the app and the data is gone, because it was never anywhere else. The facts the assistant remembers about you live on the device too.</p>
+    <p>No selling data, no ads, no data brokers. But the stronger point is structural: a privacy policy is a promise that can be revised, and storage that never leaves your phone is not. We wrote up exactly what is stored where on the <a href="../your-data.html">your data</a> page.</p>
+
+    <h2>A real free tier, no card required</h2>
+    <p>Metrify's free tier is permanent, not a trial, and starting on it asks for no payment details. It includes unlimited manual food, weight, and workout logging, the full Workout Lab, full progress charts and history, Apple Health and Google Health Connect sync, and three AI chat messages a day. Data storage is identical to Premium: on your device.</p>
+    <p>Premium is $9.99 a month or $69.99 a year, which works out to about $5.83 a month. It adds near-unlimited AI chat (a fair-use cap of 75 messages a day) and photo meal logging. That is the entire difference. Nothing about your privacy changes when you pay, and nothing you logged is held hostage if you stop.</p>
+
+    <h2>Food and training are one picture</h2>
+    <p>Most people who track seriously end up running a food app, a lifting app, and a watch, and none of them talk to each other. Metrify puts food, structured strength training, and body data in one place.</p>
+    <p>The Workout Lab handles routines, sets and reps, training history heatmaps, and progress graphs. Apple Health and Google Health Connect sync brings in weight, workouts, steps, and sleep, with you approving what gets logged. Food tracking covers calories, protein, carbs, and fat plus micronutrients including fiber, sodium, and iron, against a 447,000-food USDA-backed catalog.</p>
+    <p>The combination is the point. An assistant asked "how is this cut actually going" needs intake, training, and your weight trend in the same place to say anything useful. Split across three apps, that question has no home.</p>
+
+    <h2>Projections that slow down, because you do</h2>
+    <p>Weight trends use 7-day smoothing, so one salty dinner does not read as failure, and projections anchor on your latest actual weigh-in. As your body mass changes, projected maintenance changes with it: a lighter body burns fewer calories, so the forecast decelerates toward a plateau instead of promising the same weekly loss forever. A straight-line projection is flattering and wrong. A decelerating one tells you when it will be time to adjust.</p>
+
+    <h2>Tested against its own failures</h2>
+    <p>The assistant has been through more than 2,600 graded scenario runs across 134 recorded benchmark runs, spanning 30 categories: compound meals, restaurant items, portions and measures, drinks, preparation methods, sloppy phrasing, adversarial inputs, photo handling, and regression cases.</p>
+    <p>Every scenario in that suite exists because something went wrong once. It is a regression suite built out of real failures, deliberately weighted toward hard and ambiguous cases rather than easy ones, which makes it a much harder test than a list of foods the app already handles well.</p>
+
+    <div class="summary">
+      <h2>Summary</h2>
+      <p>Metrify is a fitness and nutrition tracker you operate by talking to it. The assistant logs meals described in one sentence, edits entries when you correct them, answers questions from your logged history, and records workouts in the same conversation, while every calorie and macro is computed by deterministic formulas on the device. Daily targets use a fixed sedentary baseline (Mifflin-St Jeor BMR multiplied by 1.2) with logged exercise counted once on top, so the calorie goal does not move when you train. All food, weight, and workout data is stored locally on the device. The free tier is permanent, includes unlimited manual logging and the full Workout Lab, and requires no payment details. Metrify Premium is $9.99 per month or $69.99 per year and adds near-unlimited AI chat and photo meal logging.</p>
+    </div>
+
+    <div class="more-reading">
+      <h2>Related reading</h2>
+      <ul>
+        <li><a href="the-chatbot-is-the-app.html">The assistant is the application, not just a chat window</a></li>
+        <li><a href="your-workout-should-count-once.html">Your workout should count once</a></li>
+        <li><a href="metrify-vs-myfitnesspal.html">Metrify vs MyFitnessPal: an honest comparison</a></li>
+        <li><a href="metrify-vs-welling.html">Metrify vs Welling: two AI-first food trackers, compared</a></li>
+      </ul>
+    </div>
+
+    <div class="article-cta">
+      <h2>Try Metrify</h2>
+      <p>In beta now, with full release planned for August 2026.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+    </div>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>&copy; 2026 Verlin Software LLC. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="../faq.html">FAQ</a>
+      <a href="index.html">Articles</a>
+      <a href="../your-data.html">Your Data</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Service</a>
+      <a href="../delete-account.html">Delete Account</a>
+      <a href="mailto:support@metrify.fit">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

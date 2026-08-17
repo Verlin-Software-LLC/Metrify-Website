@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The assistant is the application, not just a chat window</title>
+<meta name="description" content="How Metrify uses an AI agent with direct database access to log food, build custom entries, and track workouts in one continuous conversation.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Metrify">
+<meta property="og:title" content="The assistant is the application, not just a chat window">
+<meta property="og:description" content="How Metrify uses an AI agent with direct database access to log food, build custom entries, and track workouts in one continuous conversation.">
+<meta property="og:url" content="https://metrify.fit/articles/the-chatbot-is-the-app.html">
+<meta property="og:image" content="https://metrify.fit/resources/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Metrify: the fitness tracker you can just talk to">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The assistant is the application, not just a chat window">
+<meta name="twitter:description" content="How Metrify uses an AI agent with direct database access to log food, build custom entries, and track workouts in one continuous conversation.">
+<meta name="twitter:image" content="https://metrify.fit/resources/og-card.png">
+<link rel="canonical" href="https://metrify.fit/articles/the-chatbot-is-the-app.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/metrify_logo.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="article.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The assistant is the application, not just a chat window",
+  "description": "How Metrify uses an AI agent with direct database access to log food, build custom entries, and track workouts in one continuous conversation.",
+  "datePublished": "2026-07-31",
+  "dateModified": "2026-07-31",
+  "author": { "@type": "Organization", "name": "Metrify" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Metrify",
+    "logo": { "@type": "ImageObject", "url": "https://metrify.fit/metrify_logo.svg" }
+  },
+  "mainEntityOfPage": "https://metrify.fit/articles/the-chatbot-is-the-app.html"
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index.html"><img class="logo-mark" src="../metrify_logo.svg" alt="Metrify logo">Metrify</a>
+    <div class="nav-links">
+      <a class="anchor-link" href="../index.html#features">Features</a>
+      <a class="anchor-link" href="../index.html#privacy">Privacy</a>
+      <a class="anchor-link" href="../index.html#pricing">Pricing</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="index.html" class="current">Articles</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <header class="article-head">
+    <span class="eyebrow"><a href="index.html">How it works</a></span>
+    <h1>The assistant is the application, not just a chat window</h1>
+    <p class="standfirst">Most fitness AI is a help desk next to your data. Ours operates on the data directly.</p>
+    <p class="byline">Published 31 July 2026</p>
+  </header>
+
+  <article>
+    <h2>An assistant with hands</h2>
+    <p>Most artificial intelligence in fitness applications operates like a help desk. You open a chat window, ask a question about protein intake, receive advice, and then close the window to manually enter your lunch in a standard menu. The AI gives you guidance, but it cannot actually do the work for you.</p>
+    <p>Metrify's assistant operates directly on your database. It is not an advice layer bolted onto a conventional tracking interface. The assistant has a catalog of tools it can call to search foods, write entries, edit items it already wrote, save custom foods, log workouts, and read your history.</p>
+    <p>The distinction sounds like an implementation detail. It is not. It determines whether you can finish a task by talking, or whether talking is just the first step before you go and do the task yourself.</p>
+
+    <h2>What tool access makes possible</h2>
+    <p>Because the assistant interacts directly with your local database, you can manage your entire day through natural conversation. You can log several different items from one sentence, such as telling the app you had two eggs, a slice of toast with butter, and a black coffee.</p>
+    <p>If you make a mistake, you can correct a logged entry conversationally right after it was written. If you tell the app you had 200 grams of chicken but meant 250 grams, you simply say so, and the assistant updates the row. It does not create a second entry and leave you to delete the first one.</p>
+    <p>You can also send a photo and type a correction at the same time. If you upload a picture of a plate and type "the rice was about 300g", the assistant uses the photo to identify the food but overrides the rice portion with your typed amount. It does this without adding a duplicate row. The same works in the other direction: photograph a plate, mention the drink that was out of frame, and both end up logged, with the pictured items intact.</p>
+    <p>The assistant can read your history to answer questions about your own data. You can ask what your average protein intake was last week, and it will pull the actual numbers rather than guessing. You can also log a workout in the same conversation as a meal, moving between nutrition and exercise tracking without switching screens.</p>
+
+    <h2>The model reads, the formulas count</h2>
+    <p>A common concern with AI in fitness apps is hallucination. Language models are famously bad at arithmetic, which is a problem when tracking calories and macronutrients. Metrify splits the responsibilities to solve this.</p>
+    <p>The AI's job is to understand what you said and pick the right food or exercise from the database. The arithmetic is computed deterministically on the device with real formulas. The model parses your language to find the items, but fixed formulas calculate the calories, macronutrients, basal metabolic rate, and deficits.</p>
+    <p>This is why the assistant does not invent your numbers. It is not asked to. When it identifies a food, that food carries real nutritional values from a 447,000-food USDA-backed catalog, and the device does the multiplication. The model reads, the formulas count.</p>
+    <p>It also means the parts of the app most likely to be wrong are the parts you can see and correct. If the assistant picks the wrong food, that is visible on the confirmation card before it commits. If it picks the right food, the numbers that follow are not a matter of opinion.</p>
+
+    <h2>How we know it works</h2>
+    <p>Getting an assistant to reliably call the right tool with the right arguments is the hard part, so it is tested aggressively. More than 2,600 graded scenario runs have been executed against the assistant across 134 recorded benchmark runs.</p>
+    <p>The suite spans 30 scenario categories and is deliberately weighted toward hard, ambiguous, real-world phrasing rather than easy wins. The bar for shipping a change is that the whole suite passes.</p>
+
+    <div class="summary">
+      <h2>Summary</h2>
+      <p>Metrify uses a conversational AI agent with direct tool access to the user's local database. The assistant can search foods, log single and bulk entries, edit past entries, save custom foods, log workout sessions, and read daily summaries. Natural language models parse the user's input, while deterministic device-side formulas compute all calories, macronutrients, and mathematical projections.</p>
+    </div>
+
+    <div class="more-reading">
+      <h2>Related reading</h2>
+      <ul>
+        <li><a href="one-app-whole-picture.html">One application for the whole picture</a></li>
+        <li><a href="your-workout-should-count-once.html">Your workout should count once</a></li>
+        <li><a href="metrify-vs-welling.html">Metrify vs Welling: two AI-first food trackers, compared</a></li>
+      </ul>
+    </div>
+
+    <div class="article-cta">
+      <h2>Try Metrify</h2>
+      <p>In beta now, with full release planned for August 2026.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_Rp7votPh9bJqfgML_lUJDGCzVk3PJwj7MtibfAYZPuT9g/viewform" target="_blank" rel="noopener" class="btn btn-primary">Join the waitlist</a>
+    </div>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>&copy; 2026 Verlin Software LLC. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="../faq.html">FAQ</a>
+      <a href="index.html">Articles</a>
+      <a href="../your-data.html">Your Data</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Service</a>
+      <a href="../delete-account.html">Delete Account</a>
+      <a href="mailto:support@metrify.fit">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
